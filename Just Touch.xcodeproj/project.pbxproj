@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		B0267BE51CC947E00076AF8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267BE41CC947E00076AF8B /* AppDelegate.swift */; };
-		B0267BE71CC947E00076AF8B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0267BE61CC947E00076AF8B /* GameScene.sks */; };
 		B0267BE91CC947E00076AF8B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267BE81CC947E00076AF8B /* GameScene.swift */; };
 		B0267BEB1CC947E00076AF8B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267BEA1CC947E00076AF8B /* GameViewController.swift */; };
 		B0267BEE1CC947E00076AF8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0267BEC1CC947E00076AF8B /* Main.storyboard */; };
@@ -16,6 +15,8 @@
 		B0267BF31CC947E00076AF8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0267BF11CC947E00076AF8B /* LaunchScreen.storyboard */; };
 		B0267BFE1CC947E10076AF8B /* Just_TouchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267BFD1CC947E10076AF8B /* Just_TouchTests.swift */; };
 		B0267C091CC947E10076AF8B /* Just_TouchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267C081CC947E10076AF8B /* Just_TouchUITests.swift */; };
+		B0267C211CC94FD50076AF8B /* MainParticle.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0267C1F1CC94FD50076AF8B /* MainParticle.sks */; };
+		B0267C221CC94FD50076AF8B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0267C201CC94FD50076AF8B /* GameScene.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,6 @@
 /* Begin PBXFileReference section */
 		B0267BE11CC947E00076AF8B /* Just Touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0267BE41CC947E00076AF8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0267BE61CC947E00076AF8B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		B0267BE81CC947E00076AF8B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B0267BEA1CC947E00076AF8B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		B0267BED1CC947E00076AF8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -51,6 +51,8 @@
 		B0267C041CC947E10076AF8B /* Just TouchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just TouchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0267C081CC947E10076AF8B /* Just_TouchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_TouchUITests.swift; sourceTree = "<group>"; };
 		B0267C0A1CC947E10076AF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0267C1F1CC94FD50076AF8B /* MainParticle.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainParticle.sks; sourceTree = "<group>"; };
+		B0267C201CC94FD50076AF8B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +103,8 @@
 		B0267BE31CC947E00076AF8B /* Just Touch */ = {
 			isa = PBXGroup;
 			children = (
+				B0267C1D1CC94FD50076AF8B /* View */,
 				B0267BE41CC947E00076AF8B /* AppDelegate.swift */,
-				B0267BE61CC947E00076AF8B /* GameScene.sks */,
 				B0267BE81CC947E00076AF8B /* GameScene.swift */,
 				B0267BEA1CC947E00076AF8B /* GameViewController.swift */,
 				B0267BEC1CC947E00076AF8B /* Main.storyboard */,
@@ -129,6 +131,23 @@
 				B0267C0A1CC947E10076AF8B /* Info.plist */,
 			);
 			path = "Just TouchUITests";
+			sourceTree = "<group>";
+		};
+		B0267C1D1CC94FD50076AF8B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0267C1E1CC94FD50076AF8B /* Emitters */,
+				B0267C201CC94FD50076AF8B /* GameScene.sks */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0267C1E1CC94FD50076AF8B /* Emitters */ = {
+			isa = PBXGroup;
+			children = (
+				B0267C1F1CC94FD50076AF8B /* MainParticle.sks */,
+			);
+			path = Emitters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,7 +254,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0267BE71CC947E00076AF8B /* GameScene.sks in Resources */,
+				B0267C211CC94FD50076AF8B /* MainParticle.sks in Resources */,
+				B0267C221CC94FD50076AF8B /* GameScene.sks in Resources */,
 				B0267BF31CC947E00076AF8B /* LaunchScreen.storyboard in Resources */,
 				B0267BF01CC947E00076AF8B /* Assets.xcassets in Resources */,
 				B0267BEE1CC947E00076AF8B /* Main.storyboard in Resources */,
