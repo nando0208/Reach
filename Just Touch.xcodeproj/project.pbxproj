@@ -18,6 +18,7 @@
 		B0267C211CC94FD50076AF8B /* SmokeRocket.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0267C1F1CC94FD50076AF8B /* SmokeRocket.sks */; };
 		B0267C221CC94FD50076AF8B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0267C201CC94FD50076AF8B /* GameScene.sks */; };
 		B0267C251CC953100076AF8B /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267C241CC953100076AF8B /* Rocket.swift */; };
+		B0267C281CC9B0A60076AF8B /* Parallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267C271CC9B0A60076AF8B /* Parallax.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B0267C1F1CC94FD50076AF8B /* SmokeRocket.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeRocket.sks; sourceTree = "<group>"; };
 		B0267C201CC94FD50076AF8B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		B0267C241CC953100076AF8B /* Rocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		B0267C271CC9B0A60076AF8B /* Parallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parallax.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 		B0267C1D1CC94FD50076AF8B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B0267C261CC9B09A0076AF8B /* Parallax */,
 				B0267C231CC952DB0076AF8B /* Sprites */,
 				B0267C1E1CC94FD50076AF8B /* Emitters */,
 				B0267C201CC94FD50076AF8B /* GameScene.sks */,
@@ -159,6 +162,14 @@
 				B0267C241CC953100076AF8B /* Rocket.swift */,
 			);
 			path = Sprites;
+			sourceTree = "<group>";
+		};
+		B0267C261CC9B09A0076AF8B /* Parallax */ = {
+			isa = PBXGroup;
+			children = (
+				B0267C271CC9B0A60076AF8B /* Parallax.swift */,
+			);
+			path = Parallax;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -295,6 +306,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0267BE91CC947E00076AF8B /* GameScene.swift in Sources */,
+				B0267C281CC9B0A60076AF8B /* Parallax.swift in Sources */,
 				B0267BEB1CC947E00076AF8B /* GameViewController.swift in Sources */,
 				B0267BE51CC947E00076AF8B /* AppDelegate.swift in Sources */,
 				B0267C251CC953100076AF8B /* Rocket.swift in Sources */,
@@ -446,6 +458,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FernandoFerreira.Just-Touch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -458,6 +471,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FernandoFerreira.Just-Touch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -528,6 +542,7 @@
 				B0267C0F1CC947E10076AF8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0267C101CC947E10076AF8B /* Build configuration list for PBXNativeTarget "Just TouchTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +551,7 @@
 				B0267C121CC947E10076AF8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0267C131CC947E10076AF8B /* Build configuration list for PBXNativeTarget "Just TouchUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +560,7 @@
 				B0267C151CC947E10076AF8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

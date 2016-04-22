@@ -8,7 +8,8 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: Parallax {
+    
     override func didMoveToView(view: SKView) {
 
         /* Setup your scene here */
@@ -21,7 +22,7 @@ class GameScene: SKScene {
         
         self.addChild(rocket)
     }
-    
+        
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
        
@@ -29,5 +30,7 @@ class GameScene: SKScene {
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        
+        super.update(currentTime)
     }
 }
