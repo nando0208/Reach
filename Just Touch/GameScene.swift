@@ -8,7 +8,22 @@
 
 import SpriteKit
 
-class GameScene: SKScene {
+class GameScene: ParallaxScene {
+
+//    override init(size: CGSize) {
+//        super.init(size: size)
+//        
+//        self.addChild(SKSpriteNode(texture: SKTexture(imageNamed: "bg_close")))
+//        self.addChild(SKSpriteNode(texture: SKTexture(imageNamed: "bg_far")))
+//        self.addChild(SKSpriteNode(texture: SKTexture(imageNamed: "bg_close")))
+//        self.addChild(SKSpriteNode(texture: SKTexture(imageNamed: "bg_far")))
+//        
+//    }
+//    
+//    required init?(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+    
     override func didMoveToView(view: SKView) {
 
         /* Setup your scene here */
@@ -21,7 +36,7 @@ class GameScene: SKScene {
         
         self.addChild(rocket)
     }
-    
+        
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
        
@@ -29,5 +44,7 @@ class GameScene: SKScene {
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+        
+        super.update(currentTime)
     }
 }
