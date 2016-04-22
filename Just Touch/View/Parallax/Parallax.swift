@@ -28,7 +28,7 @@ class ParallaxScene: SKScene {
             let layer = SKSpriteNode(imageNamed: imageNamed)
             let nextLayer = SKSpriteNode(imageNamed: imageNamed)
             
-            let scale = size.height / layer.size.height
+            let scale = size.width / layer.size.width
             
             layer.setScale(scale)
             nextLayer.setScale(scale)
@@ -36,8 +36,8 @@ class ParallaxScene: SKScene {
             layer.position = CGPoint(x: size.width * 0.5,
                                      y: size.height * 0.5)
             
-            nextLayer.position  = CGPoint(x: layer.position.x + layer.size.width,
-                                          y: layer.position.y)
+            nextLayer.position  = CGPoint(x: layer.position.x,
+                                          y: layer.position.y + layer.size.height)
             
             self.addChild(layer)
             self.addChild(nextLayer)
@@ -57,19 +57,11 @@ class ParallaxScene: SKScene {
         layers.forEach { (layer, speed) in
             
             moveSprite(layer, deltaTime: deltaTime, speed: speed)
-            
-            // If this sprite is now offscreen (i.e., its rightmost edge is
-            // farther left than the scene's leftmost edge):
-            if layer.frame.maxX < self.frame.minX {
-                
-                // Shift it over so that it's now to the immediate right
-                // of the other sprite.
-                // This means that the two sprites are effectively
-                // leap-frogging each other as they both move.
-                layer.position =
-                    CGPoint(x: layer.position.x +
-                        layer.size.width * 2,
-                        y: layer.position.y)
+
+            if layer.frame.maxY < self.frame.minY {
+
+                layer.position = CGPoint(x: layer.position.x,
+                                        y: layer.position.y + layer.size.height * 2)
             }
         }
     }
@@ -77,7 +69,7 @@ class ParallaxScene: SKScene {
     private func moveSprite(sprite: SKSpriteNode, deltaTime: NSTimeInterval, speed: CGFloat) {
         
         var newposition = sprite.position
-        newposition.x -= speed * CGFloat(deltaTime)
+        newposition.y -= speed * CGFloat(deltaTime)
         sprite.position = newposition
     }
     
