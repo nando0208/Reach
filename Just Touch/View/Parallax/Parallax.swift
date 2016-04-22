@@ -20,10 +20,10 @@ class ParallaxScene: SKScene {
     var deltaTime : NSTimeInterval = 0
     
     
-    init(backgrounds: [String], size: CGSize) {
+    init(backgrounds: [(String, CGFloat)], size: CGSize) {
         super.init(size: size)
         
-        backgrounds.forEach { imageNamed in
+        backgrounds.forEach { (imageNamed, speed) in
             
             let layer = SKSpriteNode(imageNamed: imageNamed)
             let nextLayer = SKSpriteNode(imageNamed: imageNamed)
@@ -42,8 +42,8 @@ class ParallaxScene: SKScene {
             self.addChild(layer)
             self.addChild(nextLayer)
             
-            self.layers.append((layer, 10.0))
-            self.layers.append((nextLayer, 10.0))
+            self.layers.append((layer, speed))
+            self.layers.append((nextLayer, speed))
         }
         
     }
@@ -82,18 +82,14 @@ class ParallaxScene: SKScene {
     }
     
     override func update(currentTime: NSTimeInterval) {
-        // First, update the delta time values:
-        
-        // If we don't have a last frame time value, this is the first frame,
-        // so delta time will be zero.
+
         if lastFrameTime <= 0 {
             lastFrameTime = currentTime
         }
-        
-        // Set last frame time to current time
-        lastFrameTime = currentTime
-        
+
         updateParalax(currentTime - lastFrameTime)
+
+        lastFrameTime = currentTime
     }
     
 }

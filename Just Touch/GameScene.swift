@@ -10,19 +10,6 @@ import SpriteKit
 
 class GameScene: ParallaxScene {
 
-//    override init(size: CGSize) {
-//        super.init(size: size)
-//        
-//        self.addChild(SKSpriteNode(texture: SKTexture(imageNamed: "bg_close")))
-//        self.addChild(SKSpriteNode(texture: SKTexture(imageNamed: "bg_far")))
-//        self.addChild(SKSpriteNode(texture: SKTexture(imageNamed: "bg_close")))
-//        self.addChild(SKSpriteNode(texture: SKTexture(imageNamed: "bg_far")))
-//        
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
     
     override func didMoveToView(view: SKView) {
 
