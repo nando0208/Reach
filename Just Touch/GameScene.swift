@@ -17,8 +17,10 @@ class GameScene: Parallax {
         let rocket = Rocket()
         
         rocket.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
-        rocket.yScale = 0.4
-        rocket.xScale = 0.4
+
+        let scale = 0.08 * CGRectGetHeight(self.frame) / CGRectGetHeight(rocket.frame)
+
+        rocket.setScale(scale)
         
         self.addChild(rocket)
     }
