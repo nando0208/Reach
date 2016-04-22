@@ -8,7 +8,7 @@
 
 import SpriteKit
 
-class ParallaxScene: SKScene {
+class Parallax: SKScene {
     
     // Layers
     var layers = [(SKSpriteNode, CGFloat)]()

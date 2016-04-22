@@ -8,8 +8,7 @@
 
 import SpriteKit
 
-class GameScene: ParallaxScene {
-
+class GameScene: Parallax {
     
     override func didMoveToView(view: SKView) {
 
