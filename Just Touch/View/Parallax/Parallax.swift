@@ -22,9 +22,11 @@ class Parallax: SKScene {
     
     init(backgrounds: [(String, CGFloat)], size: CGSize) {
         super.init(size: size)
-        
+
+        var zLayerPosition = CGFloat(-10.0)
+
         backgrounds.forEach { (imageNamed, speed) in
-            
+
             let layer = SKSpriteNode(imageNamed: imageNamed)
             let nextLayer = SKSpriteNode(imageNamed: imageNamed)
             
@@ -32,7 +34,12 @@ class Parallax: SKScene {
             
             layer.setScale(scale)
             nextLayer.setScale(scale)
-            
+
+            zLayerPosition -= 1
+
+            layer.zPosition = zLayerPosition
+            nextLayer.zPosition = zLayerPosition
+
             layer.position = CGPoint(x: size.width * 0.5,
                                      y: size.height * 0.5)
             
