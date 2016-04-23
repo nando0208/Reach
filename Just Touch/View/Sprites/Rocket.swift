@@ -36,7 +36,7 @@ final class Rocket: SKSpriteNode {
 
             smoke = smokeNode
             maxParticlesToEmit = smokeNode.particleBirthRate
-            smokeNode.numParticlesToEmit = 0
+            smokeNode.particleBirthRate = 0
         }
     }
     

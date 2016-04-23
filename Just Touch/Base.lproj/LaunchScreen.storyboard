@@ -21,19 +21,19 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-far" translatesAutoresizingMaskIntoConstraints="NO" id="Au1-8M-gnr">
                                 <rect key="frame" x="0.0" y="-464" width="600" height="1064"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="Au1-8M-gnr" secondAttribute="height" multiplier="207:367" id="feQ-Cx-UvL"/>
+                                    <constraint firstAttribute="width" secondItem="Au1-8M-gnr" secondAttribute="height" multiplier="0.5:1" id="feQ-Cx-UvL"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-veryfar" translatesAutoresizingMaskIntoConstraints="NO" id="TsI-UW-ZTt">
                                 <rect key="frame" x="0.0" y="-464" width="600" height="1064"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="TsI-UW-ZTt" secondAttribute="height" multiplier="207:367" id="Nd3-SP-r5d"/>
+                                    <constraint firstAttribute="width" secondItem="TsI-UW-ZTt" secondAttribute="height" multiplier="0.5:1" id="Nd3-SP-r5d"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-close" translatesAutoresizingMaskIntoConstraints="NO" id="rbX-5r-Za4">
                                 <rect key="frame" x="0.0" y="-464" width="600" height="1064"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="rbX-5r-Za4" secondAttribute="height" multiplier="207:367" id="kk1-3O-V0U"/>
+                                    <constraint firstAttribute="width" secondItem="rbX-5r-Za4" secondAttribute="height" multiplier="0.5:1" id="kk1-3O-V0U"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glow-planet" translatesAutoresizingMaskIntoConstraints="NO" id="8KF-ur-i2Y">
@@ -81,22 +81,20 @@
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Sys-jO-Q4z" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3vo-WI-p7g"/>
+                            <constraint firstItem="Au1-8M-gnr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="41e-ZQ-lmk"/>
+                            <constraint firstItem="rbX-5r-Za4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="5Dy-GQ-Ls8"/>
                             <constraint firstItem="Igg-LA-ALS" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="5Pp-KV-Ndq"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="rbX-5r-Za4" secondAttribute="bottom" id="8ey-md-C82"/>
                             <constraint firstItem="TsI-UW-ZTt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BeH-1d-wdT"/>
+                            <constraint firstItem="TsI-UW-ZTt" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="D4o-ds-nYp"/>
                             <constraint firstItem="Sys-jO-Q4z" firstAttribute="centerX" secondItem="rbX-5r-Za4" secondAttribute="centerX" id="JgN-Rs-mpJ"/>
-                            <constraint firstItem="TsI-UW-ZTt" firstAttribute="width" secondItem="TsI-UW-ZTt" secondAttribute="height" multiplier="207:367" id="JtW-9Y-AqZ"/>
                             <constraint firstItem="8KF-ur-i2Y" firstAttribute="centerY" secondItem="Igg-LA-ALS" secondAttribute="centerY" id="MBu-KX-f7B"/>
                             <constraint firstItem="Igg-LA-ALS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Tjt-ZZ-RbA"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="TsI-UW-ZTt" secondAttribute="bottom" id="Xhl-jv-Nih"/>
                             <constraint firstItem="rbX-5r-Za4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Y5Z-Bu-umd"/>
                             <constraint firstItem="Au1-8M-gnr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bzz-hK-Ewf"/>
+                            <constraint firstItem="Igg-LA-ALS" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="70" id="gIP-VU-eA5"/>
                             <constraint firstItem="TsI-UW-ZTt" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="gTN-rF-kXY"/>
                             <constraint firstItem="8KF-ur-i2Y" firstAttribute="width" secondItem="Igg-LA-ALS" secondAttribute="height" multiplier="1.27:1" id="gtR-gU-QtR"/>
                             <constraint firstItem="rbX-5r-Za4" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="ifH-el-XXt"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Au1-8M-gnr" secondAttribute="bottom" id="jNm-j6-UK7"/>
-                            <constraint firstItem="Igg-LA-ALS" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="70" id="kdv-co-Je4"/>
-                            <constraint firstItem="rbX-5r-Za4" firstAttribute="width" secondItem="rbX-5r-Za4" secondAttribute="height" multiplier="207:367" id="m1w-5C-pg5"/>
                             <constraint firstItem="Au1-8M-gnr" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="tYo-ex-LM0"/>
                             <constraint firstItem="8KF-ur-i2Y" firstAttribute="centerX" secondItem="Igg-LA-ALS" secondAttribute="centerX" id="uSd-ME-L7U"/>
                         </constraints>
@@ -106,11 +104,15 @@
                                 <exclude reference="Sys-jO-Q4z"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="3vo-WI-p7g"/>
-                                <exclude reference="JgN-Rs-mpJ"/>
+                                <exclude reference="gIP-VU-eA5"/>
                                 <exclude reference="MBu-KX-f7B"/>
                                 <exclude reference="gtR-gU-QtR"/>
                                 <exclude reference="uSd-ME-L7U"/>
+                                <exclude reference="41e-ZQ-lmk"/>
+                                <exclude reference="D4o-ds-nYp"/>
+                                <exclude reference="5Dy-GQ-Ls8"/>
+                                <exclude reference="3vo-WI-p7g"/>
+                                <exclude reference="JgN-Rs-mpJ"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -119,11 +121,15 @@
                                 <include reference="Sys-jO-Q4z"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="3vo-WI-p7g"/>
-                                <include reference="JgN-Rs-mpJ"/>
+                                <include reference="gIP-VU-eA5"/>
                                 <include reference="MBu-KX-f7B"/>
                                 <include reference="gtR-gU-QtR"/>
                                 <include reference="uSd-ME-L7U"/>
+                                <include reference="41e-ZQ-lmk"/>
+                                <include reference="D4o-ds-nYp"/>
+                                <include reference="5Dy-GQ-Ls8"/>
+                                <include reference="3vo-WI-p7g"/>
+                                <include reference="JgN-Rs-mpJ"/>
                             </mask>
                         </variation>
                     </view>
