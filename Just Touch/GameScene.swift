@@ -6,6 +6,10 @@
 //  Copyright (c) 2016 Fernando Ferreira. All rights reserved.
 //
 
+protocol GameSceneDelegate {
+    func startGame()
+}
+
 import SpriteKit
 
 let maxSpeedRocket:CGFloat = 10
@@ -13,21 +17,16 @@ let maxSpeedRocket:CGFloat = 10
 class GameScene: Parallax {
 
     var rocket = Rocket()
+    
+    var planet: SKSpriteNode?
+    var moon: Moon?
+    var reachLabel: SKSpriteNode?
 
     override func didMoveToView(view: SKView) {
 
         /* Setup your scene here */
         
         setupHome()
-//        rocket.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
-//
-//        let scale = 0.08 * CGRectGetHeight(self.frame) / CGRectGetHeight(rocket.frame)
-//
-//        rocket.setScale(scale)
-//        
-//        addChild(rocket)
-        
-        
     }
     
     private func setupHome(){
@@ -56,7 +55,7 @@ class GameScene: Parallax {
         
         addChild(reachLabel)
         
-        let moon = SKSpriteNode(imageNamed: "moon")
+        let moon = Moon(imageNamed: "moon")
         moon.zPosition = reachLabel.zPosition
         moon.setScale(0.0)
         moon.position = CGPoint(x: CGRectGetMidX(frame),
@@ -69,6 +68,9 @@ class GameScene: Parallax {
         moonGlow.zPosition = moon.zPosition + 10
         
         moon.addChild(moonGlow)
+        moon.glow = moonGlow
+        moon.userInteractionEnabled = true
+        moon.delegate = self
         
         moonGlow.alpha = 0.0
 
@@ -85,18 +87,52 @@ class GameScene: Parallax {
                 ])
             ))
         
+        self.planet = planet
+        self.reachLabel = reachLabel
+        self.moon = moon
     }
         
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
 
-        speedGlobal = (speedGlobal + 1) % maxSpeedRocket
-        rocket.setSpeedRocket(speedGlobal)
     }
    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
         super.update(currentTime)
+    }
+}
+
+extension GameScene: GameSceneDelegate {
+    
+    func startGame() {
+        guard let planet = planet else { return }
+
+        
+        rocket.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
+        let scale = 0.1 * CGRectGetHeight(self.frame) / CGRectGetHeight(rocket.frame)
+        rocket.setScale(scale)
+        rocket.zPosition = planet.zPosition - 1
+        addChild(rocket)
+        
+        moon?.userInteractionEnabled = false
+        moon?.glow?.removeAllActions()
+        moon?.glow?.setScale(0.5)
+        moon?.glow?.alpha = 1.0
+        
+        moon?.glow?.runAction(SKAction.sequence([
+            SKAction.group([
+                SKAction.scaleTo(3, duration: 1.5)
+                ]),
+            SKAction.group([
+                SKAction.scaleTo(0.0, duration: 0.0)
+                ])
+            ]))
+        
+        moon?.runAction(SKAction.fadeOutWithDuration(1.3))
+        
+        reachLabel?.runAction(SKAction.fadeOutWithDuration(1.3))
+        planet.runAction(SKAction.moveTo(CGPoint(x: planet.position.x, y: CGRectGetHeight(planet.frame) * -0.1), duration: 3))
     }
 }
