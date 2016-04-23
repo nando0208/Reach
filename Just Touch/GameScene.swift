@@ -8,26 +8,30 @@
 
 import SpriteKit
 
+let maxSpeedRocket:CGFloat = 10
+
 class GameScene: Parallax {
-    
+
+    var rocket = Rocket()
+
     override func didMoveToView(view: SKView) {
 
         /* Setup your scene here */
-        
-        let rocket = Rocket()
-        
+
         rocket.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
 
         let scale = 0.08 * CGRectGetHeight(self.frame) / CGRectGetHeight(rocket.frame)
 
         rocket.setScale(scale)
         
-        self.addChild(rocket)
+        addChild(rocket)
     }
         
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
-       
+
+        speedGlobal = (speedGlobal + 1) % maxSpeedRocket
+        rocket.setSpeedRocket(speedGlobal)
     }
    
     override func update(currentTime: CFTimeInterval) {
