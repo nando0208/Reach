@@ -18,6 +18,8 @@ final class Rocket: SKSpriteNode {
             smokeNode = NSKeyedUnarchiver.unarchiveObjectWithFile(somkePath) as? SKEmitterNode {
             
             smokeNode.zPosition = self.zPosition - 1
+
+            smokeNode.setScale(CGFloat(0.34)) //Scale of Rocket
             smokeNode.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMinY(self.frame))
             
             self.addChild(smokeNode)
