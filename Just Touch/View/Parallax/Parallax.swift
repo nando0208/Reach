@@ -14,11 +14,10 @@ class Parallax: SKScene {
     var layers = [(SKSpriteNode, CGFloat)]()
     
     // Time of last frame
-    var lastFrameTime : NSTimeInterval = 0
-    
-    // Time since last frame
-    var deltaTime : NSTimeInterval = 0
-    
+    var lastFrameTime: NSTimeInterval = 0
+
+    // Speed of Rocket
+    var speedGlobal: CGFloat = 0
     
     init(backgrounds: [(String, CGFloat)], size: CGSize) {
         super.init(size: size)
@@ -59,7 +58,7 @@ class Parallax: SKScene {
         fatalError("Not implemented")
     }
     
-    func updateParalax(deltaTime: NSTimeInterval) {
+    private func updateParalax(deltaTime: NSTimeInterval) {
         
         layers.forEach { (layer, speed) in
             
@@ -76,7 +75,7 @@ class Parallax: SKScene {
     private func moveSprite(sprite: SKSpriteNode, deltaTime: NSTimeInterval, speed: CGFloat) {
         
         var newposition = sprite.position
-        newposition.y -= speed * CGFloat(deltaTime)
+        newposition.y -= speed * CGFloat(deltaTime) * speedGlobal
         sprite.position = newposition
     }
     

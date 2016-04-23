@@ -27,6 +27,8 @@ class GameScene: Parallax {
         
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
+
+        speedGlobal = (speedGlobal + 1) % 10
        
     }
    
