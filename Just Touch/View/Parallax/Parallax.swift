@@ -24,6 +24,8 @@ class Parallax: SKScene {
 
         speedGlobal = 0
 
+        userInteractionEnabled = false
+
         var zLayerPosition = CGFloat(-10.0)
 
         backgrounds.forEach { (imageNamed, speed) in
@@ -94,7 +96,7 @@ class Parallax: SKScene {
 
     func setSpeedParallax(speed: CGFloat) {
 
-        if speed <= maxSpeedRocket {
+        if speed <= maxSpeedRocket && speed >= minSpeedRocket {
             speedGlobal = speed
         }
     }

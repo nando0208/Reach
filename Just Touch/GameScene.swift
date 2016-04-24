@@ -12,7 +12,8 @@ protocol GameSceneDelegate {
 
 import SpriteKit
 
-let maxSpeedRocket:CGFloat = 10
+let maxSpeedRocket:CGFloat = 10.0
+let minSpeedRocket:CGFloat = 0.2
 
 class GameScene: Parallax {
 
@@ -93,20 +94,68 @@ class GameScene: Parallax {
         self.reachLabel = reachLabel
         self.moon = moon
     }
+
+    // MARK: - Touches
         
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
 
+        guard let currentTouch = touches.first else { return }
+
+        print("X: \(currentTouch.locationInNode(self).x)  Y:\(currentTouch.locationInNode(self).y)")
+
     }
-   
+
+    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+
+        guard let location = touches.first?.locationInNode(self) else { return }
+
+        if location.x > CGRectGetMidX(frame) {
+
+            changeSpeedTo(speedGlobal + 0.1)
+        } else {
+            changeSpeedTo(speedGlobal - 0.1)
+        }
+
+        print("X: \(location.x)  Y:\(location.y)")
+
+    }
+
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+
+    }
+
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+
+    }
+
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
         
         super.update(currentTime)
 
+        checkPositionOfRocket()
+    }
+
+    private func checkPositionOfRocket(){
+
         if inHome && rocket.position.y > CGRectGetMidY(frame) {
             rocket.physicsBody?.velocity = CGVector.zero
+
+            inHome = false
+            playTheGame()
         }
+    }
+
+    private func playTheGame(){
+
+        userInteractionEnabled = true
+    }
+
+    private func changeSpeedTo(speed: CGFloat) {
+
+        rocket.setSpeedRocket(speed)
+        setSpeedParallax(speed)
     }
 }
 

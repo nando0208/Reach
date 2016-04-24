@@ -82,7 +82,7 @@ final class Rocket: SKSpriteNode {
 
     func setSpeedRocket(newValue: CGFloat) {
 
-        if newValue <= maxSpeedRocket {
+        if newValue <= maxSpeedRocket && newValue >= minSpeedRocket {
             speedRocket = newValue
         }
     }
