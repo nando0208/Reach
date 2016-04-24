@@ -12,7 +12,7 @@ protocol GameSceneDelegate {
 
 import SpriteKit
 
-let maxSpeedRocket:CGFloat = 8.0
+let maxSpeedRocket:CGFloat = 5.0
 let minSpeedRocket:CGFloat = 0.2
 
 class GameScene: Parallax {
