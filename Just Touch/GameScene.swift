@@ -12,10 +12,12 @@ protocol GameSceneDelegate {
 
 import SpriteKit
 
-let maxSpeedRocket:CGFloat = 10.0
+let maxSpeedRocket:CGFloat = 8.0
 let minSpeedRocket:CGFloat = 0.2
 
 class GameScene: Parallax {
+
+    var objectsInMoviments = [(SKSpriteNode, CGFloat)]()
 
     var rocket = Rocket()
 
@@ -123,10 +125,25 @@ class GameScene: Parallax {
 
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
+
+        updateMovimentObjects(currentTime - lastFrameTime)
         
         super.update(currentTime)
 
         checkPositionOfRocket()
+    }
+
+    private func updateMovimentObjects(deltaTime: NSTimeInterval) {
+
+        objectsInMoviments = objectsInMoviments.filter { (layer, speed) -> Bool in
+            self.moveSprite(layer, deltaTime: deltaTime, speed: speed)
+
+            if layer.frame.maxY < self.frame.minY {
+
+                layer.removeFromParent()
+            }
+            return true
+        }
     }
 
     private func checkPositionOfRocket(){
@@ -142,6 +159,9 @@ class GameScene: Parallax {
     private func playTheGame(){
 
         userInteractionEnabled = true
+        if let planet = self.planet {
+            objectsInMoviments.append((planet, 20.0))
+        }
     }
 
     // MARK: - Speed

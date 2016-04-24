@@ -81,7 +81,7 @@ final class Rocket: SKSpriteNode {
 
         if newValue <= maxSpeedRocket && newValue >= minSpeedRocket {
             speedRocket = newValue
-            smoke.particleAlphaSpeed = minSpeedAlpha - ((minSpeedAlpha - maxSpeedAlpha) * speedRocket / (maxSpeedRocket - 1))
+            smoke.particleAlphaSpeed = minSpeedAlpha - ((minSpeedAlpha - maxSpeedAlpha) * speedRocket / (maxSpeedRocket - 0.2))
         }
     }
 }
