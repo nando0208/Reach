@@ -109,11 +109,18 @@ extension GameScene: GameSceneDelegate {
     func startGame() {
         guard let planet = planet else { return }
 
+        setSpeedParallax(1.5)
         
-        rocket.position = CGPoint(x: CGRectGetMidX(self.frame), y: CGRectGetMidY(self.frame))
-        let scale = 0.1 * CGRectGetHeight(self.frame) / CGRectGetHeight(rocket.frame)
+        rocket.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetHeight(frame) * 0.2)
+        let scale = 0.1 * CGRectGetHeight(frame) / CGRectGetHeight(rocket.frame)
         rocket.setScale(scale)
+        rocket.smoke.particleBirthRate = rocket.maxParticlesToEmit / 2
         rocket.zPosition = planet.zPosition - 1
+        rocket.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(frame), y: CGRectGetMidY(frame)),
+            duration: 3.0)) {
+            self.setSpeedParallax(0.2)
+            self.rocket.smoke.particleBirthRate = 0
+        }
         addChild(rocket)
         
         moon?.userInteractionEnabled = false
@@ -133,6 +140,6 @@ extension GameScene: GameSceneDelegate {
         moon?.runAction(SKAction.fadeOutWithDuration(1.3))
         
         reachLabel?.runAction(SKAction.fadeOutWithDuration(1.3))
-        planet.runAction(SKAction.moveTo(CGPoint(x: planet.position.x, y: CGRectGetHeight(planet.frame) * -0.1), duration: 3))
+        planet.runAction(SKAction.moveTo(CGPoint(x: planet.position.x, y: CGRectGetHeight(planet.frame) * -0.15), duration: 3))
     }
 }
