@@ -171,7 +171,7 @@ extension GameScene: GameSceneDelegate {
         rocket.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetHeight(frame) * -0.1)
         let scale = 0.1 * CGRectGetHeight(frame) / CGRectGetHeight(rocket.frame)
         rocket.setScale(scale)
-        rocket.smoke.particleBirthRate = rocket.maxParticlesToEmit / 2
+        rocket.smoke.particleAlphaSpeed = 0.3
         rocket.zPosition = planet.zPosition + 2
         rocket.smoke.zPosition = rocket.zPosition - 1
 
@@ -196,7 +196,7 @@ extension GameScene: GameSceneDelegate {
         planet.runAction(SKAction.moveTo(CGPoint(x: planet.position.x, y: CGRectGetHeight(planet.frame) * -0.15), duration: 3.0)) {
 
             self.setSpeedParallax(0.2)
-            self.rocket.smoke.particleBirthRate = 1
+            self.rocket.smoke.particleAlphaSpeed = -2.0
 
             if let body = self.rocket.physicsBody {
                 body.applyImpulse(CGVector(dx: 0.0, dy: body.velocity.dy * -0.4))

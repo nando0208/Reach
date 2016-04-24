@@ -12,7 +12,8 @@ final class Rocket: SKSpriteNode {
 
     private var speedRocket: CGFloat = 0
 
-    var maxParticlesToEmit:CGFloat = 0
+    var maxSpeedAlpha:CGFloat = -0.1
+    var minSpeedAlpha:CGFloat = -2.0
     
     var hatch = Hatch()
 
@@ -34,8 +35,8 @@ final class Rocket: SKSpriteNode {
         addChild(smokeNode)
         
         smoke = smokeNode
-        maxParticlesToEmit = smokeNode.particleBirthRate
-        smokeNode.particleBirthRate = 0
+        maxSpeedAlpha = smokeNode.particleAlphaSpeed
+        smokeNode.particleAlphaSpeed = minSpeedAlpha
         
         addChild(hatch)
         
@@ -80,7 +81,7 @@ final class Rocket: SKSpriteNode {
 
         if newValue <= maxSpeedRocket && newValue >= minSpeedRocket {
             speedRocket = newValue
-            smoke.particleBirthRate = speedRocket * CGFloat(maxParticlesToEmit) / maxSpeedRocket
+            smoke.particleAlphaSpeed = minSpeedAlpha - ((minSpeedAlpha - maxSpeedAlpha) * speedRocket / (maxSpeedRocket - 1))
         }
     }
 }
