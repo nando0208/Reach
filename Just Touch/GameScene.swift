@@ -42,7 +42,7 @@ class GameScene: Parallax {
                                   y: CGRectGetHeight(frame) - ( 70 + CGRectGetHeight(planet.frame) / 2 ))
         
         planet.runAction(SKAction.repeatActionForever(
-            SKAction.rotateByAngle( CGFloat( M_PI * 2.0), duration: 120.0)))
+            SKAction.rotateByAngle( CGFloat( M_PI * 2.0), duration: 200.0)))
         
         planet.addChild(glow)
         
@@ -129,12 +129,8 @@ extension GameScene: GameSceneDelegate {
         moon?.glow?.alpha = 1.0
         
         moon?.glow?.runAction(SKAction.sequence([
-            SKAction.group([
-                SKAction.scaleTo(3, duration: 1.5)
-                ]),
-            SKAction.group([
-                SKAction.scaleTo(0.0, duration: 0.0)
-                ])
+            SKAction.scaleTo(3, duration: 1.5),
+            SKAction.scaleTo(0.0, duration: 0.0)
             ]))
         
         moon?.runAction(SKAction.fadeOutWithDuration(1.3))
