@@ -10,11 +10,7 @@ import SpriteKit
 
 final class Rocket: SKSpriteNode {
 
-    private var speedRocket: CGFloat = 0 {
-        didSet {
-            smoke.particleBirthRate = speedRocket * CGFloat(maxParticlesToEmit) / maxSpeedRocket
-        }
-    }
+    private var speedRocket: CGFloat = 0
 
     var maxParticlesToEmit:CGFloat = 0
     
@@ -84,6 +80,7 @@ final class Rocket: SKSpriteNode {
 
         if newValue <= maxSpeedRocket && newValue >= minSpeedRocket {
             speedRocket = newValue
+            smoke.particleBirthRate = speedRocket * CGFloat(maxParticlesToEmit) / maxSpeedRocket
         }
     }
 }

@@ -102,23 +102,15 @@ class GameScene: Parallax {
 
         guard let currentTouch = touches.first else { return }
 
-        print("X: \(currentTouch.locationInNode(self).x)  Y:\(currentTouch.locationInNode(self).y)")
+        changeSpeedTo( calculateSpeedWith(currentTouch) )
 
     }
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
-        guard let location = touches.first?.locationInNode(self) else { return }
+        guard let currentTouch = touches.first else { return }
 
-        if location.x > CGRectGetMidX(frame) {
-
-            changeSpeedTo(speedGlobal + 0.1)
-        } else {
-            changeSpeedTo(speedGlobal - 0.1)
-        }
-
-        print("X: \(location.x)  Y:\(location.y)")
-
+        changeSpeedTo( calculateSpeedWith(currentTouch))
     }
 
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -150,6 +142,14 @@ class GameScene: Parallax {
     private func playTheGame(){
 
         userInteractionEnabled = true
+    }
+
+    // MARK: - Speed
+    private func calculateSpeedWith(touch: UITouch) -> CGFloat {
+
+        let location = touch.locationInNode(self)
+
+        return location.x * (maxSpeedRocket - minSpeedRocket) / CGRectGetWidth(frame)
     }
 
     private func changeSpeedTo(speed: CGFloat) {
