@@ -31,7 +31,6 @@ final class Rocket: SKSpriteNode {
                 return
         }
         
-        smokeNode.zPosition = self.zPosition - 1
         smokeNode.setScale(CGFloat(0.34)) //Scale of Rocket
         smokeNode.position = CGPoint(x: CGRectGetMidX(self.frame),
                                      y: CGRectGetMinY(self.frame))
@@ -44,7 +43,7 @@ final class Rocket: SKSpriteNode {
         
         addChild(hatch)
         
-        hatch.zPosition = zPosition
+        hatch.zPosition = zPosition + 30
         hatch.position = CGPoint(x: CGRectGetMidX(self.frame),
                                  y: CGRectGetHeight(self.frame)
                                     - ( CGRectGetHeight(hatch.frame) / 2 ) - CGRectGetHeight(self.frame) * 0.66 )
@@ -52,7 +51,7 @@ final class Rocket: SKSpriteNode {
         let glow = SKSpriteNode(imageNamed: "escotilha-azul-glow")
         glow.position = CGPoint(x: CGRectGetMidX(self.frame),
                                 y: CGRectGetMidX(self.frame))
-        glow.zPosition = zPosition
+        glow.zPosition = hatch.zPosition + 1
         glow.runAction(SKAction.repeatActionForever(
             SKAction.sequence([
                 SKAction.group([
@@ -66,6 +65,9 @@ final class Rocket: SKSpriteNode {
                 ])
             ))
         hatch.addChild(glow)
+
+        physicsBody = SKPhysicsBody(circleOfRadius: CGRectGetWidth(frame))
+        physicsBody?.affectedByGravity = false
     }
     
     convenience init() {

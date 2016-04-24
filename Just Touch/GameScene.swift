@@ -17,7 +17,9 @@ let maxSpeedRocket:CGFloat = 10
 class GameScene: Parallax {
 
     var rocket = Rocket()
-    
+
+    var inHome = false
+
     var planet: SKSpriteNode?
     var moon: Moon?
     var reachLabel: SKSpriteNode?
@@ -101,6 +103,10 @@ class GameScene: Parallax {
         /* Called before each frame is rendered */
         
         super.update(currentTime)
+
+        if inHome && rocket.position.y > CGRectGetMidY(frame) {
+            rocket.physicsBody?.velocity = CGVector.zero
+        }
     }
 }
 
@@ -109,20 +115,22 @@ extension GameScene: GameSceneDelegate {
     func startGame() {
         guard let planet = planet else { return }
 
+        inHome = true
+
         setSpeedParallax(1.5)
         
-        rocket.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetHeight(frame) * 0.2)
+        rocket.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetHeight(frame) * -0.1)
         let scale = 0.1 * CGRectGetHeight(frame) / CGRectGetHeight(rocket.frame)
         rocket.setScale(scale)
         rocket.smoke.particleBirthRate = rocket.maxParticlesToEmit / 2
-        rocket.zPosition = planet.zPosition - 1
-        rocket.runAction(SKAction.moveTo(CGPoint(x: CGRectGetMidX(frame), y: CGRectGetMidY(frame)),
-            duration: 3.0)) {
-            self.setSpeedParallax(0.2)
-            self.rocket.smoke.particleBirthRate = 0
-        }
+        rocket.zPosition = planet.zPosition + 2
+        rocket.smoke.zPosition = rocket.zPosition - 1
+
         addChild(rocket)
-        
+        rocket.zPosition = planet.zPosition + 1
+        rocket.physicsBody?.applyImpulse(CGVector(dx: 0.0,
+                                                dy: CGRectGetHeight(frame) * 0.15))
+
         moon?.userInteractionEnabled = false
         moon?.glow?.removeAllActions()
         moon?.glow?.setScale(0.5)
@@ -136,6 +144,14 @@ extension GameScene: GameSceneDelegate {
         moon?.runAction(SKAction.fadeOutWithDuration(1.3))
         
         reachLabel?.runAction(SKAction.fadeOutWithDuration(1.3))
-        planet.runAction(SKAction.moveTo(CGPoint(x: planet.position.x, y: CGRectGetHeight(planet.frame) * -0.15), duration: 3))
+        planet.runAction(SKAction.moveTo(CGPoint(x: planet.position.x, y: CGRectGetHeight(planet.frame) * -0.15), duration: 3.0)) {
+
+            self.setSpeedParallax(0.2)
+            self.rocket.smoke.particleBirthRate = 1
+
+            if let body = self.rocket.physicsBody {
+                body.applyImpulse(CGVector(dx: 0.0, dy: body.velocity.dy * -0.4))
+            }
+        }
     }
 }
