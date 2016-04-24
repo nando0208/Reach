@@ -17,6 +17,8 @@ final class Rocket: SKSpriteNode {
     }
 
     var maxParticlesToEmit:CGFloat = 0
+    
+    var hatch = Hatch()
 
     var smoke = SKEmitterNode()
     
@@ -24,20 +26,46 @@ final class Rocket: SKSpriteNode {
     {
         super.init(texture: texture, color: color, size: size)
         
-        if let somkePath = NSBundle.mainBundle().pathForResource("SmokeRocket", ofType: "sks"),
-            smokeNode = NSKeyedUnarchiver.unarchiveObjectWithFile(somkePath) as? SKEmitterNode {
-            
-            smokeNode.zPosition = self.zPosition - 1
-            smokeNode.setScale(CGFloat(0.34)) //Scale of Rocket
-            smokeNode.position = CGPoint(x: CGRectGetMidX(self.frame),
-                                         y: CGRectGetMinY(self.frame))
-
-            addChild(smokeNode)
-
-            smoke = smokeNode
-            maxParticlesToEmit = smokeNode.particleBirthRate
-            smokeNode.particleBirthRate = 0
+        guard let somkePath = NSBundle.mainBundle().pathForResource("SmokeRocket", ofType: "sks"),
+            smokeNode = NSKeyedUnarchiver.unarchiveObjectWithFile(somkePath) as? SKEmitterNode else {
+                return
         }
+        
+        smokeNode.zPosition = self.zPosition - 1
+        smokeNode.setScale(CGFloat(0.34)) //Scale of Rocket
+        smokeNode.position = CGPoint(x: CGRectGetMidX(self.frame),
+                                     y: CGRectGetMinY(self.frame))
+        
+        addChild(smokeNode)
+        
+        smoke = smokeNode
+        maxParticlesToEmit = smokeNode.particleBirthRate
+        smokeNode.particleBirthRate = 0
+        
+        addChild(hatch)
+        
+        hatch.zPosition = zPosition
+        hatch.position = CGPoint(x: CGRectGetMidX(self.frame),
+                                 y: CGRectGetHeight(self.frame)
+                                    - ( CGRectGetHeight(hatch.frame) / 2 ) - CGRectGetHeight(self.frame) * 0.66 )
+        
+        let glow = SKSpriteNode(imageNamed: "escotilha-azul-glow")
+        glow.position = CGPoint(x: CGRectGetMidX(self.frame),
+                                y: CGRectGetMidX(self.frame))
+        glow.zPosition = zPosition
+        glow.runAction(SKAction.repeatActionForever(
+            SKAction.sequence([
+                SKAction.group([
+                    SKAction.fadeOutWithDuration(1.3),
+                    SKAction.scaleTo(2, duration: 1.3)
+                    ]),
+                SKAction.group([
+                    SKAction.fadeInWithDuration(0.0),
+                    SKAction.scaleTo(0.0, duration: 0.0)
+                    ])
+                ])
+            ))
+        hatch.addChild(glow)
     }
     
     convenience init() {
