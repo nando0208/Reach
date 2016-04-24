@@ -41,7 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B0267BE11CC947E00076AF8B /* Just Touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0267BE11CC947E00076AF8B /* Reach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0267BE41CC947E00076AF8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0267BE81CC947E00076AF8B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		B0267BEA1CC947E00076AF8B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 		B0267BE21CC947E00076AF8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0267BE11CC947E00076AF8B /* Just Touch.app */,
+				B0267BE11CC947E00076AF8B /* Reach.app */,
 				B0267BF91CC947E10076AF8B /* Just TouchTests.xctest */,
 				B0267C041CC947E10076AF8B /* Just TouchUITests.xctest */,
 			);
@@ -181,9 +181,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B0267BE01CC947E00076AF8B /* Just Touch */ = {
+		B0267BE01CC947E00076AF8B /* Reach */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0267C0D1CC947E10076AF8B /* Build configuration list for PBXNativeTarget "Just Touch" */;
+			buildConfigurationList = B0267C0D1CC947E10076AF8B /* Build configuration list for PBXNativeTarget "Reach" */;
 			buildPhases = (
 				B0267BDD1CC947E00076AF8B /* Sources */,
 				B0267BDE1CC947E00076AF8B /* Frameworks */,
@@ -193,9 +193,9 @@
 			);
 			dependencies = (
 			);
-			name = "Just Touch";
+			name = Reach;
 			productName = "Just Touch";
-			productReference = B0267BE11CC947E00076AF8B /* Just Touch.app */;
+			productReference = B0267BE11CC947E00076AF8B /* Reach.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B0267BF81CC947E10076AF8B /* Just TouchTests */ = {
@@ -270,7 +270,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B0267BE01CC947E00076AF8B /* Just Touch */,
+				B0267BE01CC947E00076AF8B /* Reach */,
 				B0267BF81CC947E10076AF8B /* Just TouchTests */,
 				B0267C031CC947E10076AF8B /* Just TouchUITests */,
 			);
@@ -342,12 +342,12 @@
 /* Begin PBXTargetDependency section */
 		B0267BFB1CC947E10076AF8B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B0267BE01CC947E00076AF8B /* Just Touch */;
+			target = B0267BE01CC947E00076AF8B /* Reach */;
 			targetProxy = B0267BFA1CC947E10076AF8B /* PBXContainerItemProxy */;
 		};
 		B0267C061CC947E10076AF8B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B0267BE01CC947E00076AF8B /* Just Touch */;
+			target = B0267BE01CC947E00076AF8B /* Reach */;
 			targetProxy = B0267C051CC947E10076AF8B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -543,7 +543,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0267C0D1CC947E10076AF8B /* Build configuration list for PBXNativeTarget "Just Touch" */ = {
+		B0267C0D1CC947E10076AF8B /* Build configuration list for PBXNativeTarget "Reach" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0267C0E1CC947E10076AF8B /* Debug */,
