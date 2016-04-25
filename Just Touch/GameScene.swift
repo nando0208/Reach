@@ -11,11 +11,14 @@ protocol GameSceneDelegate {
 }
 
 import SpriteKit
+import CoreMotion
 
 let maxSpeedRocket:CGFloat = 5.0
 let minSpeedRocket:CGFloat = 0.2
 
 class GameScene: Parallax {
+
+    let manager = CMMotionManager()
 
     var objectsInMoviments = [(SKSpriteNode, CGFloat)]()
 
@@ -97,6 +100,21 @@ class GameScene: Parallax {
         self.moon = moon
     }
 
+    // MARK: - CoreMotion
+    func setupCoreMotion() {
+
+        if manager.deviceMotionAvailable {
+            manager.deviceMotionUpdateInterval = 0.01
+            manager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in
+                if let gravity = data?.gravity {
+                    let rotation = atan2(gravity.x, gravity.y) - M_PI
+                    self.rocket.zRotation = CGFloat(rotation)
+                }
+            })
+
+        }
+    }
+
     // MARK: - Touches
         
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -162,6 +180,7 @@ class GameScene: Parallax {
         if let planet = self.planet {
             objectsInMoviments.append((planet, 20.0))
         }
+        setupCoreMotion()
     }
 
     // MARK: - Speed
