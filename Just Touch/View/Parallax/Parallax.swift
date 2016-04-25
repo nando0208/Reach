@@ -24,6 +24,8 @@ class Parallax: SKScene {
 
         speedGlobal = 0
 
+        userInteractionEnabled = false
+
         var zLayerPosition = CGFloat(-10.0)
 
         backgrounds.forEach { (imageNamed, speed) in
@@ -74,7 +76,7 @@ class Parallax: SKScene {
         }
     }
     
-    private func moveSprite(sprite: SKSpriteNode, deltaTime: NSTimeInterval, speed: CGFloat) {
+    func moveSprite(sprite: SKSpriteNode, deltaTime: NSTimeInterval, speed: CGFloat) {
         
         var newposition = sprite.position
         newposition.y -= speed * CGFloat(deltaTime) * speedGlobal
@@ -94,7 +96,7 @@ class Parallax: SKScene {
 
     func setSpeedParallax(speed: CGFloat) {
 
-        if speed <= maxSpeedRocket {
+        if speed <= maxSpeedRocket && speed >= minSpeedRocket {
             speedGlobal = speed
         }
     }
