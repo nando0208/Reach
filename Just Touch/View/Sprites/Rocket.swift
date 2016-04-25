@@ -85,15 +85,20 @@ final class Rocket: SKSpriteNode {
         }
     }
 
-    func moveY(deltaTime: NSTimeInterval) {
-
+    func moveY(deltaTime: NSTimeInterval, size: CGSize) {
+    
         var rotation = zRotation + CGFloat(M_PI)
+
+        let margin = size.width * 0.1
 
         rotation = rotation > 0 ? rotation - CGFloat(M_PI) : rotation + CGFloat(M_PI)
 
-        var newposition = position
-        newposition.x -= 340 * rotation * CGFloat(deltaTime)
-        position = newposition
+        var newPosition = position
+        newPosition.x -= 340 * rotation * CGFloat(deltaTime)
+
+        if margin < newPosition.x && newPosition.x < size.width - margin {
+            position = newPosition
+        }
     }
 }
 
