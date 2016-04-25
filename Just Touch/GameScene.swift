@@ -153,6 +153,7 @@ class GameScene: Parallax {
         /* Called before each frame is rendered */
 
         updateMovimentObjects(currentTime - lastFrameTime)
+        rocket.moveY(currentTime - lastFrameTime)
         
         super.update(currentTime)
 

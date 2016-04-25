@@ -84,6 +84,17 @@ final class Rocket: SKSpriteNode {
             smoke.particleAlphaSpeed = minSpeedAlpha - ((minSpeedAlpha - maxSpeedAlpha) * speedRocket / (maxSpeedRocket - 0.2))
         }
     }
+
+    func moveY(deltaTime: NSTimeInterval) {
+
+        var rotation = zRotation + CGFloat(M_PI)
+
+        rotation = rotation > 0 ? rotation - CGFloat(M_PI) : rotation + CGFloat(M_PI)
+
+        var newposition = position
+        newposition.x -= 340 * rotation * CGFloat(deltaTime)
+        position = newposition
+    }
 }
 
 
