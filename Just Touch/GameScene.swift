@@ -107,12 +107,20 @@ class GameScene: Parallax {
             manager.deviceMotionUpdateInterval = 0.01
             manager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in
                 if let gravity = data?.gravity {
-                    let rotation = atan2(gravity.x, gravity.y) - M_PI
-                    self.rocket.zRotation = CGFloat(rotation)
+                    var rotation = atan2( gravity.x, gravity.y)
+                    rotation = rotation > 0 ?
+                        max(rotation, M_PI * 0.75) :
+                        min(rotation, -M_PI * 0.75)
+
+                    self.applyRotation(CGFloat(rotation - M_PI))
                 }
             })
-
         }
+    }
+
+    func applyRotation(rotation: CGFloat){
+
+        rocket.zRotation = rotation
     }
 
     // MARK: - Touches
