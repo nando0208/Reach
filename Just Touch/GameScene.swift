@@ -13,7 +13,7 @@ protocol GameSceneDelegate {
 import SpriteKit
 import CoreMotion
 
-let maxSpeedRocket:CGFloat = 5.0
+let maxSpeedRocket:CGFloat = 7.0
 let minSpeedRocket:CGFloat = 0.2
 
 class GameScene: Parallax {
@@ -212,7 +212,11 @@ class GameScene: Parallax {
 
         if #available(iOS 9.0, *) {
             if forceTouchEnable {
-            
+
+                //print("force= \(touch.force) limit= \(touch.maximumPossibleForce)")
+                let force = touch.force * (maxSpeedRocket - minSpeedRocket) /
+                    touch.maximumPossibleForce
+                print("\(force)")
                 return touch.force * (maxSpeedRocket - minSpeedRocket) /
                                 touch.maximumPossibleForce
             }
