@@ -197,10 +197,11 @@ class GameScene: Parallax {
 
         let location = touch.locationInNode(self)
 
-        let maxYOfControl = CGRectGetHeight(frame) * 0.3
+        let maxYOfControl = CGRectGetHeight(frame) * 0.2
+        let minYOfControl = CGRectGetHeight(frame) * 0.1
 
-        return min(location.y, maxYOfControl) *
-            (maxSpeedRocket - minSpeedRocket) / maxYOfControl
+        return (max(minYOfControl, min(location.y, maxYOfControl)) - minYOfControl) *
+            (maxSpeedRocket - minSpeedRocket) / (maxYOfControl - minYOfControl)
     }
 
     private func changeSpeedTo(speed: CGFloat) {
