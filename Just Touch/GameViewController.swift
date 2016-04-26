@@ -22,6 +22,12 @@ class GameViewController: UIViewController {
         /* Set the scale mode to scale to fit the window */
         scene.scaleMode = .AspectFill
         
+        if #available(iOS 9.0, *) {
+            if self.traitCollection.forceTouchCapability == .Available {
+                scene.forceTouchEnable = true
+            }
+        }
+        
         // Configure the view.
         if let skView = self.view as? SKView {
             skView.showsFPS = true

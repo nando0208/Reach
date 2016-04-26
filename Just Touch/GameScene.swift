@@ -29,10 +29,13 @@ class GameScene: Parallax {
     var planet: SKSpriteNode?
     var moon: Moon?
     var reachLabel: SKSpriteNode?
+    
+    var forceTouchEnable = false
 
     override func didMoveToView(view: SKView) {
 
         /* Setup your scene here */
+        
         
         setupHome()
     }
@@ -143,10 +146,22 @@ class GameScene: Parallax {
 
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
+        if #available(iOS 9.0, *) {
+            if forceTouchEnable {
+                
+                changeSpeedTo(0.0)
+            }
+        }
     }
 
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
 
+        if #available(iOS 9.0, *) {
+            if forceTouchEnable {
+                
+                changeSpeedTo(0.0)
+            }
+        }
     }
 
     override func update(currentTime: CFTimeInterval) {
@@ -195,13 +210,21 @@ class GameScene: Parallax {
     // MARK: - Speed
     private func calculateSpeedWith(touch: UITouch) -> CGFloat {
 
+        if #available(iOS 9.0, *) {
+            if forceTouchEnable {
+            
+                return touch.force * (maxSpeedRocket - minSpeedRocket) /
+                                touch.maximumPossibleForce
+            }
+        }
+        
         let location = touch.locationInNode(self)
 
         let maxYOfControl = CGRectGetHeight(frame) * 0.2
         let minYOfControl = CGRectGetHeight(frame) * 0.1
 
         return (max(minYOfControl, min(location.y, maxYOfControl)) - minYOfControl) *
-            (maxSpeedRocket - minSpeedRocket) / (maxYOfControl - minYOfControl)
+             (maxSpeedRocket - minSpeedRocket) / (maxYOfControl - minYOfControl)
     }
 
     private func changeSpeedTo(speed: CGFloat) {
@@ -256,3 +279,4 @@ extension GameScene: GameSceneDelegate {
         }
     }
 }
+
