@@ -153,7 +153,7 @@ class GameScene: Parallax {
         /* Called before each frame is rendered */
 
         updateMovimentObjects(currentTime - lastFrameTime)
-        rocket.moveY(currentTime - lastFrameTime)
+        rocket.moveY(currentTime - lastFrameTime, size: frame.size)
         
         super.update(currentTime)
 
@@ -197,7 +197,11 @@ class GameScene: Parallax {
 
         let location = touch.locationInNode(self)
 
-        return location.x * (maxSpeedRocket - minSpeedRocket) / CGRectGetWidth(frame)
+        let maxYOfControl = CGRectGetHeight(frame) * 0.2
+        let minYOfControl = CGRectGetHeight(frame) * 0.1
+
+        return (max(minYOfControl, min(location.y, maxYOfControl)) - minYOfControl) *
+            (maxSpeedRocket - minSpeedRocket) / (maxYOfControl - minYOfControl)
     }
 
     private func changeSpeedTo(speed: CGFloat) {
@@ -226,7 +230,7 @@ extension GameScene: GameSceneDelegate {
         addChild(rocket)
         rocket.zPosition = planet.zPosition + 1
         rocket.physicsBody?.applyImpulse(CGVector(dx: 0.0,
-                                                dy: CGRectGetHeight(frame) * 0.15))
+                                                dy: CGRectGetHeight(frame) * 0.17))
 
         moon?.userInteractionEnabled = false
         moon?.glow?.removeAllActions()
@@ -247,7 +251,7 @@ extension GameScene: GameSceneDelegate {
             self.rocket.smoke.particleAlphaSpeed = -2.0
 
             if let body = self.rocket.physicsBody {
-                body.applyImpulse(CGVector(dx: 0.0, dy: body.velocity.dy * -0.4))
+                body.applyImpulse(CGVector(dx: 0.0, dy: body.velocity.dy * -0.2))
             }
         }
     }
