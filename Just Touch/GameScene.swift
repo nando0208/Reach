@@ -98,7 +98,7 @@ class GameScene: Parallax {
                 ])
             ))
         
-        tutorial = Tutorial(texture: nil, color: UIColor.clearColor(), size: CGSize(width: 10, height: CGRectGetHeight(frame) * 0.04))
+        tutorial = Tutorial(texture: nil, color: UIColor.clearColor(), size: CGSize(width: 10, height: CGRectGetHeight(frame) * 0.025))
         tutorial.position = CGPoint(x: CGRectGetMidX(frame) / 2,
                                     y: reachLabel.position.y - (CGRectGetHeight(reachLabel.frame) + 100 +
                                         CGRectGetHeight(tutorial.frame) ))
