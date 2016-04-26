@@ -18,19 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-far" translatesAutoresizingMaskIntoConstraints="NO" id="Au1-8M-gnr">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg-far" translatesAutoresizingMaskIntoConstraints="NO" id="Au1-8M-gnr">
                                 <rect key="frame" x="0.0" y="-464" width="600" height="1064"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Au1-8M-gnr" secondAttribute="height" multiplier="0.5:1" id="feQ-Cx-UvL"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-veryfar" translatesAutoresizingMaskIntoConstraints="NO" id="TsI-UW-ZTt">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg-veryfar" translatesAutoresizingMaskIntoConstraints="NO" id="TsI-UW-ZTt">
                                 <rect key="frame" x="0.0" y="-464" width="600" height="1064"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="TsI-UW-ZTt" secondAttribute="height" multiplier="0.5:1" id="Nd3-SP-r5d"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-close" translatesAutoresizingMaskIntoConstraints="NO" id="rbX-5r-Za4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg-close" translatesAutoresizingMaskIntoConstraints="NO" id="rbX-5r-Za4">
                                 <rect key="frame" x="0.0" y="-464" width="600" height="1064"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rbX-5r-Za4" secondAttribute="height" multiplier="0.5:1" id="kk1-3O-V0U"/>
@@ -52,7 +52,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planet" translatesAutoresizingMaskIntoConstraints="NO" id="Igg-LA-ALS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="planet" translatesAutoresizingMaskIntoConstraints="NO" id="Igg-LA-ALS">
                                 <rect key="frame" x="0.0" y="90" width="600" height="600"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Igg-LA-ALS" secondAttribute="height" multiplier="1:1" id="fNU-YD-5Su"/>
@@ -80,7 +80,6 @@
                         </subviews>
                         <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Sys-jO-Q4z" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="3vo-WI-p7g"/>
                             <constraint firstItem="Au1-8M-gnr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="41e-ZQ-lmk"/>
                             <constraint firstItem="rbX-5r-Za4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="5Dy-GQ-Ls8"/>
                             <constraint firstItem="Igg-LA-ALS" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="5Pp-KV-Ndq"/>
@@ -94,6 +93,7 @@
                             <constraint firstItem="Igg-LA-ALS" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="70" id="gIP-VU-eA5"/>
                             <constraint firstItem="TsI-UW-ZTt" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="gTN-rF-kXY"/>
                             <constraint firstItem="8KF-ur-i2Y" firstAttribute="width" secondItem="Igg-LA-ALS" secondAttribute="height" multiplier="1.27:1" id="gtR-gU-QtR"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Sys-jO-Q4z" secondAttribute="bottom" constant="220" id="hM7-WJ-9ba"/>
                             <constraint firstItem="rbX-5r-Za4" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="ifH-el-XXt"/>
                             <constraint firstItem="Au1-8M-gnr" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="tYo-ex-LM0"/>
                             <constraint firstItem="8KF-ur-i2Y" firstAttribute="centerX" secondItem="Igg-LA-ALS" secondAttribute="centerX" id="uSd-ME-L7U"/>
@@ -104,15 +104,15 @@
                                 <exclude reference="Sys-jO-Q4z"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="41e-ZQ-lmk"/>
+                                <exclude reference="D4o-ds-nYp"/>
+                                <exclude reference="5Dy-GQ-Ls8"/>
                                 <exclude reference="gIP-VU-eA5"/>
                                 <exclude reference="MBu-KX-f7B"/>
                                 <exclude reference="gtR-gU-QtR"/>
                                 <exclude reference="uSd-ME-L7U"/>
-                                <exclude reference="41e-ZQ-lmk"/>
-                                <exclude reference="D4o-ds-nYp"/>
-                                <exclude reference="5Dy-GQ-Ls8"/>
-                                <exclude reference="3vo-WI-p7g"/>
                                 <exclude reference="JgN-Rs-mpJ"/>
+                                <exclude reference="hM7-WJ-9ba"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -121,15 +121,15 @@
                                 <include reference="Sys-jO-Q4z"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="41e-ZQ-lmk"/>
+                                <include reference="D4o-ds-nYp"/>
+                                <include reference="5Dy-GQ-Ls8"/>
                                 <include reference="gIP-VU-eA5"/>
                                 <include reference="MBu-KX-f7B"/>
                                 <include reference="gtR-gU-QtR"/>
                                 <include reference="uSd-ME-L7U"/>
-                                <include reference="41e-ZQ-lmk"/>
-                                <include reference="D4o-ds-nYp"/>
-                                <include reference="5Dy-GQ-Ls8"/>
-                                <include reference="3vo-WI-p7g"/>
                                 <include reference="JgN-Rs-mpJ"/>
+                                <include reference="hM7-WJ-9ba"/>
                             </mask>
                         </variation>
                     </view>
@@ -143,7 +143,7 @@
         <image name="REACH" width="123" height="15"/>
         <image name="bg-close" width="319" height="638"/>
         <image name="bg-far" width="369" height="698"/>
-        <image name="bg-veryfar" width="268" height="734"/>
+        <image name="bg-veryfar" width="414" height="736"/>
         <image name="glow-planet" width="936" height="936"/>
         <image name="planet" width="736" height="736"/>
     </resources>
