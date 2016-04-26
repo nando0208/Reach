@@ -230,7 +230,7 @@ extension GameScene: GameSceneDelegate {
         addChild(rocket)
         rocket.zPosition = planet.zPosition + 1
         rocket.physicsBody?.applyImpulse(CGVector(dx: 0.0,
-                                                dy: CGRectGetHeight(frame) * 0.15))
+                                                dy: CGRectGetHeight(frame) * 0.17))
 
         moon?.userInteractionEnabled = false
         moon?.glow?.removeAllActions()
@@ -251,7 +251,7 @@ extension GameScene: GameSceneDelegate {
             self.rocket.smoke.particleAlphaSpeed = -2.0
 
             if let body = self.rocket.physicsBody {
-                body.applyImpulse(CGVector(dx: 0.0, dy: body.velocity.dy * -0.4))
+                body.applyImpulse(CGVector(dx: 0.0, dy: body.velocity.dy * -0.2))
             }
         }
     }
