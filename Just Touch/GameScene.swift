@@ -120,9 +120,13 @@ class GameScene: Parallax {
     // MARK: - CoreMotion
     func setupCoreMotion() {
 
+        
+        let queue = NSOperationQueue()
+        
         if manager.deviceMotionAvailable {
             manager.deviceMotionUpdateInterval = 0.01
-            manager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (data: CMDeviceMotion?, error: NSError?) in
+            manager.startDeviceMotionUpdatesToQueue(queue, withHandler: { (data: CMDeviceMotion?, error: NSError?) in
+                
                 if let gravity = data?.gravity {
                     var rotation = atan2( gravity.x, gravity.y)
                     rotation = rotation > 0 ?
