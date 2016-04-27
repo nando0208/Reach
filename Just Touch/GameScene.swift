@@ -18,6 +18,8 @@ let minSpeedRocket:CGFloat = 0.2
 
 class GameScene: Parallax {
 
+    var tutorial = Tutorial()
+    
     let manager = CMMotionManager()
 
     var objectsInMoviments = [(SKSpriteNode, CGFloat)]()
@@ -41,6 +43,7 @@ class GameScene: Parallax {
     }
     
     private func setupHome(){
+    
         
         let planet = SKSpriteNode(imageNamed: "planet")
         let glow = SKSpriteNode(imageNamed: "glow-planet")
@@ -97,6 +100,12 @@ class GameScene: Parallax {
                     ])
                 ])
             ))
+        
+        tutorial = Tutorial(texture: nil, color: UIColor.clearColor(), size: CGSize(width: 10, height: CGRectGetHeight(frame) * 0.025))
+        tutorial.position = CGPoint(x: CGRectGetMidX(frame) / 2,
+                                    y: reachLabel.position.y - (CGRectGetHeight(reachLabel.frame) + 100 +
+                                        CGRectGetHeight(tutorial.frame) ))
+        addChild(tutorial)
         
         self.planet = planet
         self.reachLabel = reachLabel
@@ -171,6 +180,8 @@ class GameScene: Parallax {
         rocket.moveY(currentTime - lastFrameTime, size: frame.size)
         
         super.update(currentTime)
+        
+        tutorial.updateLayersPosition()
 
         checkPositionOfRocket()
     }
