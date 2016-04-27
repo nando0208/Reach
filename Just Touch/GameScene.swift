@@ -62,7 +62,7 @@ class GameScene: Parallax {
         let reachLabel = SKSpriteNode(imageNamed: "REACH")
         reachLabel.zPosition = planet.zPosition + 10
         reachLabel.position = CGPoint(x: CGRectGetMidX(frame),
-                                      y: CGRectGetMidY(frame))
+                                      y: 220 + CGRectGetHeight(reachLabel.frame)/2)
         
         addChild(reachLabel)
         
@@ -70,7 +70,7 @@ class GameScene: Parallax {
         moon.zPosition = reachLabel.zPosition
         moon.setScale(0.0)
         moon.position = CGPoint(x: CGRectGetMidX(frame),
-                                y: CGRectGetMidY(frame) + 50 + CGRectGetHeight(moon.frame)/2 )
+                                y: reachLabel.position.y + 50 + CGRectGetHeight(moon.frame)/2 )
         
         addChild(moon)
         moon.runAction(SKAction.scaleTo(0.6, duration: 0.5))
