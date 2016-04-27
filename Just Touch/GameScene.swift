@@ -230,10 +230,6 @@ class GameScene: Parallax {
         if #available(iOS 9.0, *) {
             if forceTouchEnable {
 
-                //print("force= \(touch.force) limit= \(touch.maximumPossibleForce)")
-                let force = touch.force * (maxSpeedRocket - minSpeedRocket) /
-                    touch.maximumPossibleForce
-                print("\(force)")
                 return touch.force * (maxSpeedRocket - minSpeedRocket) /
                                 touch.maximumPossibleForce
             }
