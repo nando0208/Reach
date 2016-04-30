@@ -20,6 +20,8 @@ final class Meteor: SKSpriteNode {
         physicsBody = SKPhysicsBody(texture: texture, size: size)
         physicsBody?.categoryBitMask = ObjectsBitMask.Meteor.rawValue
         physicsBody?.contactTestBitMask = ObjectsBitMask.Rocket.rawValue
+
+        physicsBody?.affectedByGravity = false
     }
 
     convenience init() {

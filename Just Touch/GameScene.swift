@@ -39,6 +39,12 @@ class GameScene: Parallax {
     
     var forceTouchEnable = false
 
+    var currentDistance:CGFloat = 0.0
+    var meteorShower = false
+
+    var distanceOfLastMeteor:CGFloat = 0.0
+    var distanceBetweenMeteor:CGFloat = 50.0
+
     override func didMoveToView(view: SKView) {
 
         /* Setup your scene here */
@@ -193,14 +199,25 @@ class GameScene: Parallax {
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
 
+        currentDistance += CGFloat(currentTime - lastFrameTime ) * speedGlobal
+
         updateMovimentObjects(currentTime - lastFrameTime)
         rocket.moveY(currentTime - lastFrameTime, size: frame.size)
         
         super.update(currentTime)
-        
+
+        checkAddOtherMeteor()
+
         tutorial?.updateLayersPosition(speedGlobal/maxSpeedRocket)
 
         checkPositionOfRocket()
+    }
+
+    private func checkAddOtherMeteor() {
+
+        if meteorShower && currentDistance - distanceOfLastMeteor > distanceBetweenMeteor {
+            addMeteorToView()
+        }
     }
 
     private func updateMovimentObjects(deltaTime: NSTimeInterval) {
@@ -211,6 +228,7 @@ class GameScene: Parallax {
             if layer.frame.maxY < self.frame.minY {
 
                 layer.removeFromParent()
+                return false
             }
             return true
         }
@@ -233,17 +251,18 @@ class GameScene: Parallax {
         if let planet = self.planet {
             objectsInMoviments.append((planet, 20.0))
         }
-        addMeteorToView()
+        meteorShower = true
         setupCoreMotion()
     }
 
     private func addMeteorToView(){
 
+        distanceOfLastMeteor = currentDistance
         let meteor = Meteor()
         meteor.position = CGPoint(x: CGRectGetMidX(frame),
                                   y: CGRectGetHeight(frame) + CGRectGetHeight(meteor.frame)/2 )
 
-        addObjectToView(meteor, speed: 70.0)
+        addObjectToView(meteor, speed: 20.0)
     }
 
     private func addObjectToView(object: SKSpriteNode, speed: CGFloat) {
