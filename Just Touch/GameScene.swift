@@ -9,8 +9,8 @@
 import SpriteKit
 import CoreMotion
 
-let maxSpeedRocket:CGFloat = 7.0
-let minSpeedRocket:CGFloat = 0.2
+let maxSpeedRocket:CGFloat = 10.0
+var minSpeedRocket:CGFloat = 0.2
 
 
 enum ObjectsBitMask: UInt32 {
@@ -164,7 +164,11 @@ class GameScene: Parallax {
             inSplashScreen = false
             userInteractionEnabled = false
             startGame()
+        } else {
+
+            minSpeedRocket = 3.0
         }
+
 
         changeSpeedTo( calculateSpeedWith(currentTouch) )
     }
@@ -327,7 +331,7 @@ extension GameScene {
 
         inHome = true
 
-        setSpeedParallax(1.5)
+        setSpeedParallax(minSpeedRocket)
         
         rocket.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetHeight(frame) * -0.1)
         let scale = 0.1 * CGRectGetHeight(frame) / CGRectGetHeight(rocket.frame)
