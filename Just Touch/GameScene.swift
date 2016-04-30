@@ -51,6 +51,8 @@ class GameScene: Parallax {
 
         /* Setup your scene here */
         physicsWorld.contactDelegate = self
+
+        backgroundColor = UIColor(red: 25.0/255.0, green: 25/255.0, blue: 25.0/255.0, alpha: 1.0)
         
         setupHome()
     }

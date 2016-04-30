@@ -78,7 +78,7 @@
                                 </variation>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Au1-8M-gnr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="41e-ZQ-lmk"/>
                             <constraint firstItem="rbX-5r-Za4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="5Dy-GQ-Ls8"/>
@@ -104,14 +104,14 @@
                                 <exclude reference="Sys-jO-Q4z"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="41e-ZQ-lmk"/>
-                                <exclude reference="D4o-ds-nYp"/>
-                                <exclude reference="5Dy-GQ-Ls8"/>
-                                <exclude reference="gIP-VU-eA5"/>
                                 <exclude reference="MBu-KX-f7B"/>
                                 <exclude reference="gtR-gU-QtR"/>
                                 <exclude reference="uSd-ME-L7U"/>
                                 <exclude reference="JgN-Rs-mpJ"/>
+                                <exclude reference="gIP-VU-eA5"/>
+                                <exclude reference="41e-ZQ-lmk"/>
+                                <exclude reference="D4o-ds-nYp"/>
+                                <exclude reference="5Dy-GQ-Ls8"/>
                                 <exclude reference="hM7-WJ-9ba"/>
                             </mask>
                         </variation>
@@ -121,14 +121,14 @@
                                 <include reference="Sys-jO-Q4z"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="41e-ZQ-lmk"/>
-                                <include reference="D4o-ds-nYp"/>
-                                <include reference="5Dy-GQ-Ls8"/>
-                                <include reference="gIP-VU-eA5"/>
                                 <include reference="MBu-KX-f7B"/>
                                 <include reference="gtR-gU-QtR"/>
                                 <include reference="uSd-ME-L7U"/>
                                 <include reference="JgN-Rs-mpJ"/>
+                                <include reference="gIP-VU-eA5"/>
+                                <include reference="41e-ZQ-lmk"/>
+                                <include reference="D4o-ds-nYp"/>
+                                <include reference="5Dy-GQ-Ls8"/>
                                 <include reference="hM7-WJ-9ba"/>
                             </mask>
                         </variation>
