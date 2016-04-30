@@ -23,15 +23,17 @@ final class Tutorial: SKSpriteNode {
             SKSpriteNode(imageNamed: "ret-a"),
         ]
         
-        let titleTutorial = SKSpriteNode(imageNamed: "REACH")
+        let titleTutorial = SKSpriteNode(imageNamed: "Control the speed")
         
         titleTutorial.position = CGPoint(x: size.width/2, y: size.height + 40 + CGRectGetHeight(titleTutorial.frame))
-        
+
+        titleTutorial.setScale(1.4)
+
         addChild(titleTutorial)
         
         zPosition = 100
         
-        setScale(0.5)
+        setScale(0.8)
         
         layers.forEach { addChild($0) }
     }
