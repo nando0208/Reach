@@ -18,6 +18,8 @@ final class Rocket: SKSpriteNode {
     var hatch = Hatch()
 
     var smoke = SKEmitterNode()
+
+    var lifes = 3
     
     override init(texture: SKTexture!, color: UIColor, size: CGSize)
     {
@@ -45,23 +47,7 @@ final class Rocket: SKSpriteNode {
                                  y: CGRectGetHeight(self.frame)
                                     - ( CGRectGetHeight(hatch.frame) / 2 ) - CGRectGetHeight(self.frame) * 0.66 )
         
-        let glow = SKSpriteNode(imageNamed: "escotilha-azul-glow")
-        glow.position = CGPoint(x: CGRectGetMidX(self.frame),
-                                y: CGRectGetMidX(self.frame))
-        glow.zPosition = hatch.zPosition + 1
-        glow.runAction(SKAction.repeatActionForever(
-            SKAction.sequence([
-                SKAction.group([
-                    SKAction.fadeOutWithDuration(1.3),
-                    SKAction.scaleTo(2, duration: 1.3)
-                    ]),
-                SKAction.group([
-                    SKAction.fadeInWithDuration(0.0),
-                    SKAction.scaleTo(0.0, duration: 0.0)
-                    ])
-                ])
-            ))
-        hatch.addChild(glow)
+        hatch.glow.zPosition = hatch.zPosition + 1
 
         physicsBody = SKPhysicsBody(texture: texture, size: size)
         physicsBody?.categoryBitMask = ObjectsBitMask.Rocket.rawValue

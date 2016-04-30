@@ -260,6 +260,7 @@ class GameScene: Parallax {
         if let planet = self.planet {
             objectsInMoviments.append((planet, 20.0))
         }
+        rocket.hatch.changeToColor(.red)
         setupCoreMotion()
     }
 
@@ -322,7 +323,7 @@ extension GameScene: SKPhysicsContactDelegate {
             contact.bodyB.categoryBitMask == ObjectsBitMask.Rocket.rawValue)){
 
             gameOver = true
-            UIAlertView(title: "Perdeu! ", message: "Tempo de jogo: \(lastFrameTime - timeOfInitGame)", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
+            //UIAlertView(title: "Perdeu! ", message: "Tempo de jogo: \(lastFrameTime - timeOfInitGame)", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
 
         }
     }
@@ -363,6 +364,7 @@ extension GameScene {
         reachLabel?.runAction(SKAction.fadeOutWithDuration(1.3))
         planet.runAction(SKAction.moveTo(CGPoint(x: planet.position.x, y: CGRectGetHeight(planet.frame) * -0.15), duration: 3.0)) {
 
+            self.rocket.hatch.changeToColor(.yellow)
             self.setSpeedParallax(0.2)
             self.rocket.smoke.particleAlphaSpeed = -2.0
 
