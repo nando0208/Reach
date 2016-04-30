@@ -167,10 +167,9 @@ class GameScene: Parallax {
         } else {
 
             minSpeedRocket = 3.0
+            changeSpeedTo( calculateSpeedWith(currentTouch) )
+
         }
-
-
-        changeSpeedTo( calculateSpeedWith(currentTouch) )
     }
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -331,8 +330,8 @@ extension GameScene {
 
         inHome = true
 
-        setSpeedParallax(minSpeedRocket)
-        
+        setSpeedParallax(3.0)
+
         rocket.position = CGPoint(x: CGRectGetMidX(frame), y: CGRectGetHeight(frame) * -0.1)
         let scale = 0.1 * CGRectGetHeight(frame) / CGRectGetHeight(rocket.frame)
         rocket.setScale(scale)
