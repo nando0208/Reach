@@ -161,11 +161,14 @@ class GameScene: Parallax {
         guard let currentTouch = touches.first else { return }
 
         if inSplashScreen {
+
             inSplashScreen = false
             userInteractionEnabled = false
             startGame()
         } else {
 
+            distanceOfLastMeteor = currentDistance + distanceBetweenMeteor * 2
+            meteorShower = true
             minSpeedRocket = 3.0
             changeSpeedTo( calculateSpeedWith(currentTouch) )
 
@@ -254,7 +257,6 @@ class GameScene: Parallax {
         if let planet = self.planet {
             objectsInMoviments.append((planet, 20.0))
         }
-        meteorShower = true
         setupCoreMotion()
     }
 
