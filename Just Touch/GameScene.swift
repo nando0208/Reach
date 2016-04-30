@@ -295,7 +295,7 @@ class GameScene: Parallax {
         let maxYOfControl = CGRectGetHeight(frame) * 0.2
         let minYOfControl = CGRectGetHeight(frame) * 0.1
 
-        return (max(minYOfControl, min(location.y, maxYOfControl)) - minYOfControl) *
+        return minSpeedRocket + (max(minYOfControl, min(location.y, maxYOfControl)) - minYOfControl) *
              (maxSpeedRocket - minSpeedRocket) / (maxYOfControl - minYOfControl)
     }
 
