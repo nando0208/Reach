@@ -9,13 +9,6 @@
 import SpriteKit
 
 final class Moon: SKSpriteNode {
-    
-    var delegate: GameSceneDelegate?
-    
+
     var glow: SKSpriteNode?
-    
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        
-        delegate?.startGame()
-    }
 }

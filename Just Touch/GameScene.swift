@@ -6,10 +6,6 @@
 //  Copyright (c) 2016 Fernando Ferreira. All rights reserved.
 //
 
-protocol GameSceneDelegate {
-    func startGame()
-}
-
 import SpriteKit
 import CoreMotion
 
@@ -27,6 +23,8 @@ class GameScene: Parallax {
     var rocket = Rocket()
 
     var inHome = false
+
+    var inSplashScreen = true
     
     var planet: SKSpriteNode?
     var moon: Moon?
@@ -43,7 +41,8 @@ class GameScene: Parallax {
     }
     
     private func setupHome(){
-    
+
+        userInteractionEnabled = true
         
         let planet = SKSpriteNode(imageNamed: "planet")
         let glow = SKSpriteNode(imageNamed: "glow-planet")
@@ -83,9 +82,7 @@ class GameScene: Parallax {
         
         moon.addChild(moonGlow)
         moon.glow = moonGlow
-        moon.userInteractionEnabled = true
-        moon.delegate = self
-        
+
         moonGlow.alpha = 0.0
 
         moonGlow.runAction(SKAction.repeatActionForever(
@@ -120,7 +117,6 @@ class GameScene: Parallax {
     // MARK: - CoreMotion
     func setupCoreMotion() {
 
-        
         let queue = NSOperationQueue()
         
         if manager.deviceMotionAvailable {
@@ -151,8 +147,13 @@ class GameScene: Parallax {
 
         guard let currentTouch = touches.first else { return }
 
-        changeSpeedTo( calculateSpeedWith(currentTouch) )
+        if inSplashScreen {
+            inSplashScreen = false
+            userInteractionEnabled = false
+            startGame()
+        }
 
+        changeSpeedTo( calculateSpeedWith(currentTouch) )
     }
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -255,7 +256,7 @@ class GameScene: Parallax {
     }
 }
 
-extension GameScene: GameSceneDelegate {
+extension GameScene {
     
     func startGame() {
         guard let planet = planet else { return }
@@ -276,7 +277,6 @@ extension GameScene: GameSceneDelegate {
         rocket.physicsBody?.applyImpulse(CGVector(dx: 0.0,
                                                 dy: CGRectGetHeight(frame) * 0.17))
 
-        moon?.userInteractionEnabled = false
         moon?.glow?.removeAllActions()
         moon?.glow?.setScale(0.5)
         moon?.glow?.alpha = 1.0
