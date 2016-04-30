@@ -45,6 +45,8 @@ class GameScene: Parallax {
     var distanceOfLastMeteor:CGFloat = 0.0
     var distanceBetweenMeteor:CGFloat = 10.0
 
+    var timeOfInitGame:NSTimeInterval = 0.0
+
     override func didMoveToView(view: SKView) {
 
         /* Setup your scene here */
@@ -253,6 +255,7 @@ class GameScene: Parallax {
     private func playTheGame(){
 
         initTutorial()
+        timeOfInitGame = lastFrameTime
         userInteractionEnabled = true
         if let planet = self.planet {
             objectsInMoviments.append((planet, 20.0))
@@ -319,7 +322,7 @@ extension GameScene: SKPhysicsContactDelegate {
             contact.bodyB.categoryBitMask == ObjectsBitMask.Rocket.rawValue)){
 
             gameOver = true
-            //UIAlertView(title: "Perdeu! ", message: "Aprenda a jogar mais", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
+            UIAlertView(title: "Perdeu! ", message: "Tempo de jogo: \(lastFrameTime - timeOfInitGame)", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
 
         }
     }
