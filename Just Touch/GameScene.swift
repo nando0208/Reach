@@ -43,7 +43,7 @@ class GameScene: Parallax {
     var meteorShower = false
 
     var distanceOfLastMeteor:CGFloat = 0.0
-    var distanceBetweenMeteor:CGFloat = 50.0
+    var distanceBetweenMeteor:CGFloat = 10.0
 
     override func didMoveToView(view: SKView) {
 
@@ -259,10 +259,13 @@ class GameScene: Parallax {
 
         distanceOfLastMeteor = currentDistance
         let meteor = Meteor()
-        meteor.position = CGPoint(x: CGRectGetMidX(frame),
+
+        let ran = CGFloat(arc4random()) % CGRectGetMaxX(frame)
+
+        meteor.position = CGPoint(x: ran,
                                   y: CGRectGetHeight(frame) + CGRectGetHeight(meteor.frame)/2 )
 
-        addObjectToView(meteor, speed: 20.0)
+        addObjectToView(meteor, speed: 40.0)
     }
 
     private func addObjectToView(object: SKSpriteNode, speed: CGFloat) {
@@ -309,7 +312,7 @@ extension GameScene: SKPhysicsContactDelegate {
             contact.bodyB.categoryBitMask == ObjectsBitMask.Rocket.rawValue)){
 
             gameOver = true
-            UIAlertView(title: "Perdeu! ", message: "Aprenda a jogar mais", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
+            //UIAlertView(title: "Perdeu! ", message: "Aprenda a jogar mais", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
 
         }
     }

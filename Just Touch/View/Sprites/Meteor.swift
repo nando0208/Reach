@@ -14,8 +14,13 @@ final class Meteor: SKSpriteNode {
     {
         super.init(texture: texture, color: color, size: size)
 
+        let ran = arc4random() % 2
+
+        let ranSpeed = Double(arc4random()) % 20
+
         runAction(SKAction.repeatActionForever(
-            SKAction.rotateByAngle( CGFloat( M_PI * 2.0), duration: 50.0)))
+            SKAction.rotateByAngle( CGFloat( M_PI * 2.0 * (ran == 0 ? -1 : 1)),
+                duration: 40.0 + ranSpeed)))
 
         physicsBody = SKPhysicsBody(texture: texture, size: size)
         physicsBody?.categoryBitMask = ObjectsBitMask.Meteor.rawValue
