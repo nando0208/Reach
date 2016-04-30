@@ -22,6 +22,7 @@
 		B05D2CDE1CCC20E6001BE10B /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D2CDD1CCC20E6001BE10B /* Moon.swift */; };
 		B05D2CE01CCCDC50001BE10B /* Hacth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D2CDF1CCCDC50001BE10B /* Hacth.swift */; };
 		B0B54B501CCF890A00A6BED3 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B54B4F1CCF890A00A6BED3 /* Tutorial.swift */; };
+		B0CBD27D1CD4D2E500DABB17 /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CBD27C1CD4D2E500DABB17 /* Meteor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		B05D2CDD1CCC20E6001BE10B /* Moon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
 		B05D2CDF1CCCDC50001BE10B /* Hacth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hacth.swift; sourceTree = "<group>"; };
 		B0B54B4F1CCF890A00A6BED3 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		B0CBD27C1CD4D2E500DABB17 /* Meteor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				B05D2CDD1CCC20E6001BE10B /* Moon.swift */,
 				B05D2CDF1CCCDC50001BE10B /* Hacth.swift */,
 				B0B54B4F1CCF890A00A6BED3 /* Tutorial.swift */,
+				B0CBD27C1CD4D2E500DABB17 /* Meteor.swift */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 			files = (
 				B05D2CE01CCCDC50001BE10B /* Hacth.swift in Sources */,
 				B0267BE91CC947E00076AF8B /* GameScene.swift in Sources */,
+				B0CBD27D1CD4D2E500DABB17 /* Meteor.swift in Sources */,
 				B0267C281CC9B0A60076AF8B /* Parallax.swift in Sources */,
 				B0267BEB1CC947E00076AF8B /* GameViewController.swift in Sources */,
 				B0267BE51CC947E00076AF8B /* AppDelegate.swift in Sources */,

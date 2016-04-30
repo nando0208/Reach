@@ -232,13 +232,11 @@ class GameScene: Parallax {
 
     private func addMeteorToView(){
 
-        let ran = arc4random() % 3
-
-        let meteor = SKSpriteNode(imageNamed: String(format: "meteor%d", ran))
+        let meteor = Meteor()
         meteor.position = CGPoint(x: CGRectGetMidX(frame),
                                   y: CGRectGetHeight(frame) + CGRectGetHeight(meteor.frame)/2 )
 
-        addObjectToView(meteor, speed: 40.0)
+        addObjectToView(meteor, speed: 70.0)
     }
 
     private func addObjectToView(object: SKSpriteNode, speed: CGFloat) {
