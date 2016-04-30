@@ -43,7 +43,7 @@ class GameScene: Parallax {
     var meteorShower = false
 
     var distanceOfLastMeteor:CGFloat = 0.0
-    var distanceBetweenMeteor:CGFloat = 10.0
+    var distanceBetweenMeteor:CGFloat = 5.0
 
     var timeOfInitGame:NSTimeInterval = 0.0
 
@@ -169,8 +169,11 @@ class GameScene: Parallax {
             startGame()
         } else {
 
-            distanceOfLastMeteor = currentDistance + distanceBetweenMeteor * 2
-            meteorShower = true
+            if meteorShower == false {
+                distanceOfLastMeteor = currentDistance + distanceBetweenMeteor * 2
+                meteorShower = true
+            }
+
             minSpeedRocket = 3.0
             changeSpeedTo( calculateSpeedWith(currentTouch) )
 
@@ -260,7 +263,6 @@ class GameScene: Parallax {
         if let planet = self.planet {
             objectsInMoviments.append((planet, 20.0))
         }
-        rocket.hatch.changeToColor(.red)
         setupCoreMotion()
     }
 
@@ -316,15 +318,20 @@ extension GameScene: SKPhysicsContactDelegate {
 
     func didBeginContact(contact: SKPhysicsContact) {
 
-        if gameOver == false &&
-            ((contact.bodyA.categoryBitMask == ObjectsBitMask.Rocket.rawValue &&
-            contact.bodyB.categoryBitMask == ObjectsBitMask.Meteor.rawValue) ||
-            (contact.bodyA.categoryBitMask == ObjectsBitMask.Meteor.rawValue &&
-            contact.bodyB.categoryBitMask == ObjectsBitMask.Rocket.rawValue)){
+        if //gameOver == false &&
+            (contact.bodyA.categoryBitMask == ObjectsBitMask.Rocket.rawValue &&
+            contact.bodyB.categoryBitMask == ObjectsBitMask.Meteor.rawValue) {
 
-            gameOver = true
+            if let meteor = contact.bodyB.node as? Meteor {
+
+                meteor.crash()
+            }
+            rocket.removeLife()
+
+            if rocket.lifes <= 0 {
+                gameOver = true
+            }
             //UIAlertView(title: "Perdeu! ", message: "Tempo de jogo: \(lastFrameTime - timeOfInitGame)", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
-
         }
     }
 }
@@ -364,7 +371,6 @@ extension GameScene {
         reachLabel?.runAction(SKAction.fadeOutWithDuration(1.3))
         planet.runAction(SKAction.moveTo(CGPoint(x: planet.position.x, y: CGRectGetHeight(planet.frame) * -0.15), duration: 3.0)) {
 
-            self.rocket.hatch.changeToColor(.yellow)
             self.setSpeedParallax(0.2)
             self.rocket.smoke.particleAlphaSpeed = -2.0
 

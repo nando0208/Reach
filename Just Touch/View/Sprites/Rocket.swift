@@ -52,6 +52,7 @@ final class Rocket: SKSpriteNode {
         physicsBody = SKPhysicsBody(texture: texture, size: size)
         physicsBody?.categoryBitMask = ObjectsBitMask.Rocket.rawValue
         physicsBody?.contactTestBitMask = ObjectsBitMask.Meteor.rawValue
+        physicsBody?.collisionBitMask = 0
         physicsBody?.affectedByGravity = false
     }
     
@@ -70,6 +71,21 @@ final class Rocket: SKSpriteNode {
         if newValue <= maxSpeedRocket && newValue >= minSpeedRocket {
             speedRocket = newValue
             smoke.particleAlphaSpeed = minSpeedAlpha - ((minSpeedAlpha - maxSpeedAlpha) * speedRocket / (maxSpeedRocket - 0.2))
+        }
+    }
+
+    func removeLife() {
+
+        lifes -= 1
+
+        switch lifes {
+        case 1:
+            hatch.changeToColor(.red)
+        case 2:
+            hatch.changeToColor(.yellow)
+        case 3:
+            hatch.changeToColor(.blue)
+        default: break
         }
     }
 

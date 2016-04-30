@@ -25,6 +25,7 @@ final class Meteor: SKSpriteNode {
         physicsBody = SKPhysicsBody(texture: texture, size: size)
         physicsBody?.categoryBitMask = ObjectsBitMask.Meteor.rawValue
         physicsBody?.contactTestBitMask = ObjectsBitMask.Rocket.rawValue
+        physicsBody?.collisionBitMask = 0
 
         physicsBody?.affectedByGravity = false
     }
@@ -37,6 +38,15 @@ final class Meteor: SKSpriteNode {
 
         let color = UIColor(red: 2.0/255.0, green: 239.0/255.0, blue: 239.0/255.0, alpha: 1.0)
         self.init(texture: texture, color: color, size: texture.size())
+    }
+
+    func crash(){
+
+        texture = SKTexture(imageNamed: "meteorcrash0")
+        physicsBody = nil
+        runAction(SKAction.fadeOutWithDuration(0.7), completion: {
+            self.position = CGPoint(x: 0.0, y: -1000)
+        })
     }
 
     required init?(coder aDecoder: NSCoder) {
