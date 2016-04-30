@@ -18,7 +18,8 @@ final class Meteor: SKSpriteNode {
             SKAction.rotateByAngle( CGFloat( M_PI * 2.0), duration: 50.0)))
 
         physicsBody = SKPhysicsBody(texture: texture, size: size)
-
+        physicsBody?.categoryBitMask = ObjectsBitMask.Meteor.rawValue
+        physicsBody?.contactTestBitMask = ObjectsBitMask.Rocket.rawValue
     }
 
     convenience init() {

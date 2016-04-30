@@ -12,6 +12,12 @@ import CoreMotion
 let maxSpeedRocket:CGFloat = 7.0
 let minSpeedRocket:CGFloat = 0.2
 
+
+enum ObjectsBitMask: UInt32 {
+    case Rocket = 1
+    case Meteor = 2
+}
+
 class GameScene: Parallax {
 
     var tutorial:Tutorial?
@@ -23,8 +29,9 @@ class GameScene: Parallax {
     var rocket = Rocket()
 
     var inHome = false
-
     var inSplashScreen = true
+
+    var gameOver = false
     
     var planet: SKSpriteNode?
     var moon: Moon?
@@ -35,7 +42,7 @@ class GameScene: Parallax {
     override func didMoveToView(view: SKView) {
 
         /* Setup your scene here */
-        
+        physicsWorld.contactDelegate = self
         
         setupHome()
     }
@@ -269,6 +276,23 @@ class GameScene: Parallax {
 
         rocket.setSpeedRocket(speed)
         setSpeedParallax(speed)
+    }
+}
+
+extension GameScene: SKPhysicsContactDelegate {
+
+    func didBeginContact(contact: SKPhysicsContact) {
+
+        if gameOver == false &&
+            ((contact.bodyA.categoryBitMask == ObjectsBitMask.Rocket.rawValue &&
+            contact.bodyB.categoryBitMask == ObjectsBitMask.Meteor.rawValue) ||
+            (contact.bodyA.categoryBitMask == ObjectsBitMask.Meteor.rawValue &&
+            contact.bodyB.categoryBitMask == ObjectsBitMask.Rocket.rawValue)){
+
+            gameOver = true
+            UIAlertView(title: "Perdeu! ", message: "Aprenda a jogar mais", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
+
+        }
     }
 }
 

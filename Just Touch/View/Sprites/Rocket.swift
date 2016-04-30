@@ -64,6 +64,8 @@ final class Rocket: SKSpriteNode {
         hatch.addChild(glow)
 
         physicsBody = SKPhysicsBody(circleOfRadius: CGRectGetWidth(frame))
+        physicsBody?.categoryBitMask = ObjectsBitMask.Rocket.rawValue
+        physicsBody?.contactTestBitMask = ObjectsBitMask.Meteor.rawValue
         physicsBody?.affectedByGravity = false
     }
     
