@@ -82,6 +82,13 @@ class Parallax: SKScene {
         newposition.y -= speed * CGFloat(deltaTime) * speedGlobal
         sprite.position = newposition
     }
+
+    func moveSpriteX(sprite: SKSpriteNode, deltaTime: NSTimeInterval, speed: CGFloat) {
+
+        var newposition = sprite.position
+        newposition.x += speed * CGFloat(deltaTime)
+        sprite.position = newposition
+    }
     
     override func update(currentTime: NSTimeInterval) {
 

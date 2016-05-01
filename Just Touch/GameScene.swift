@@ -29,7 +29,7 @@ class GameScene: Parallax {
     
     let manager = CMMotionManager()
 
-    var objectsInMoviments = [(SKSpriteNode, CGFloat)]()
+    var objectsInMoviments = [(SKSpriteNode, CGFloat, CGFloat)]()
 
     var rocket = Rocket()
 
@@ -304,8 +304,9 @@ class GameScene: Parallax {
 
     private func updateMovimentObjects(deltaTime: NSTimeInterval) {
 
-        objectsInMoviments = objectsInMoviments.filter { (layer, speed) -> Bool in
-            self.moveSprite(layer, deltaTime: deltaTime, speed: speed)
+        objectsInMoviments = objectsInMoviments.filter { (layer, speedX, speedY) -> Bool in
+            self.moveSpriteX(layer, deltaTime: deltaTime, speed: speedX)
+            self.moveSprite(layer, deltaTime: deltaTime, speed: speedY)
 
             if layer.frame.maxY < self.frame.minY {
 
@@ -332,7 +333,7 @@ class GameScene: Parallax {
         timeOfInitGame = lastFrameTime
         userInteractionEnabled = true
         if let planet = self.planet {
-            objectsInMoviments.append((planet, 20.0))
+            objectsInMoviments.append((planet, 0.0, 20.0))
         }
         setupCoreMotion()
     }
@@ -349,13 +350,17 @@ class GameScene: Parallax {
 
         let ranSpeed = CGFloat( arc4random() % 30)
 
-        addObjectToView(meteor, speed: 30.0 + ranSpeed)
+        var ranSpeedX = CGFloat ( arc4random() % 30)
+
+        ranSpeedX *= ran > CGRectGetMidX(frame) ? -1 : 1
+
+        addObjectToView(meteor, speedX: ranSpeedX, speedY: 30.0 + ranSpeed)
     }
 
-    private func addObjectToView(object: SKSpriteNode, speed: CGFloat) {
+    private func addObjectToView(object: SKSpriteNode, speedX:CGFloat, speedY: CGFloat) {
 
         addChild(object)
-        objectsInMoviments.append((object, speed))
+        objectsInMoviments.append((object, speedX, speedY))
     }
 
     // MARK: - Speed
