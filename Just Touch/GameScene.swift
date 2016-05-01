@@ -71,7 +71,7 @@ class GameScene: Parallax {
         manager.stopDeviceMotionUpdates()
         rocket.zRotation = 0
 
-        let menu = GameoverScreen()
+        let menu = GameoverScreen(points: Int(currentDistance * 100000 / CGFloat(lastFrameTime)))
         menu.position = CGPoint(x: CGRectGetMidX(frame),
                                 y: CGRectGetMidY(frame))
         menu.zPosition = rocket.hatch.glow.zPosition + 4000
@@ -228,7 +228,7 @@ class GameScene: Parallax {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
        /* Called when a touch begins */
 
-        guard let currentTouch = touches.first else { return }
+        guard let currentTouch = touches.first where gameOver == false else { return }
 
         if inSplashScreen {
 
@@ -250,7 +250,7 @@ class GameScene: Parallax {
 
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
 
-        guard let currentTouch = touches.first else { return }
+        guard let currentTouch = touches.first where gameOver == false else { return }
 
         changeSpeedTo( calculateSpeedWith(currentTouch))
     }
@@ -260,7 +260,7 @@ class GameScene: Parallax {
         if #available(iOS 9.0, *) {
             if forceTouchEnable {
                 
-                changeSpeedTo(0.0)
+                changeSpeedTo(minSpeedRocket)
             }
         }
     }
@@ -270,7 +270,7 @@ class GameScene: Parallax {
         if #available(iOS 9.0, *) {
             if forceTouchEnable {
                 
-                changeSpeedTo(0.0)
+                changeSpeedTo(minSpeedRocket)
             }
         }
     }
