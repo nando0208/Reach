@@ -22,10 +22,17 @@ class GameViewController: UIViewController {
         /* Set the scale mode to scale to fit the window */
         scene.scaleMode = .AspectFill
         
+        if #available(iOS 9.0, *) {
+            if self.traitCollection.forceTouchCapability == .Available {
+                scene.forceTouchEnable = true
+            }
+        }
+        
         // Configure the view.
         if let skView = self.view as? SKView {
             skView.showsFPS = true
             skView.showsNodeCount = true
+            skView.showsPhysics = false
             
             /* Sprite Kit applies additional optimizations to improve rendering performance */
             skView.ignoresSiblingOrder = true
@@ -39,11 +46,7 @@ class GameViewController: UIViewController {
     }
 
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
-        } else {
-            return .All
-        }
+        return .Portrait
     }
 
     override func didReceiveMemoryWarning() {

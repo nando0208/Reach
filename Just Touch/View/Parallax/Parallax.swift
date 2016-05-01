@@ -14,14 +14,17 @@ class Parallax: SKScene {
     var layers = [(SKSpriteNode, CGFloat)]()
     
     // Time of last frame
-    var lastFrameTime : NSTimeInterval = 0
-    
-    // Time since last frame
-    var deltaTime : NSTimeInterval = 0
-    
+    var lastFrameTime: NSTimeInterval = 0
+
+    // Speed of Rocket
+    var speedGlobal: CGFloat = 0
     
     init(backgrounds: [(String, CGFloat)], size: CGSize) {
         super.init(size: size)
+
+        speedGlobal = 0
+
+        userInteractionEnabled = false
 
         var zLayerPosition = CGFloat(-10.0)
 
@@ -59,7 +62,7 @@ class Parallax: SKScene {
         fatalError("Not implemented")
     }
     
-    func updateParalax(deltaTime: NSTimeInterval) {
+    private func updateParalax(deltaTime: NSTimeInterval) {
         
         layers.forEach { (layer, speed) in
             
@@ -73,10 +76,17 @@ class Parallax: SKScene {
         }
     }
     
-    private func moveSprite(sprite: SKSpriteNode, deltaTime: NSTimeInterval, speed: CGFloat) {
+    func moveSprite(sprite: SKSpriteNode, deltaTime: NSTimeInterval, speed: CGFloat) {
         
         var newposition = sprite.position
-        newposition.y -= speed * CGFloat(deltaTime)
+        newposition.y -= speed * CGFloat(deltaTime) * speedGlobal
+        sprite.position = newposition
+    }
+
+    func moveSpriteX(sprite: SKSpriteNode, deltaTime: NSTimeInterval, speed: CGFloat) {
+
+        var newposition = sprite.position
+        newposition.x += speed * CGFloat(deltaTime)
         sprite.position = newposition
     }
     
@@ -89,6 +99,13 @@ class Parallax: SKScene {
         updateParalax(currentTime - lastFrameTime)
 
         lastFrameTime = currentTime
+    }
+
+    func setSpeedParallax(speed: CGFloat) {
+
+        if speed <= maxSpeedRocket && speed >= minSpeedRocket {
+            speedGlobal = speed
+        }
     }
     
 }

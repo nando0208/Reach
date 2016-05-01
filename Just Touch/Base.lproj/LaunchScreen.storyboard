@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8150" systemVersion="15A204g" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -15,13 +17,134 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg-far" translatesAutoresizingMaskIntoConstraints="NO" id="Au1-8M-gnr">
+                                <rect key="frame" x="0.0" y="-464" width="600" height="1064"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Au1-8M-gnr" secondAttribute="height" multiplier="0.5:1" id="feQ-Cx-UvL"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg-veryfar" translatesAutoresizingMaskIntoConstraints="NO" id="TsI-UW-ZTt">
+                                <rect key="frame" x="0.0" y="-464" width="600" height="1064"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TsI-UW-ZTt" secondAttribute="height" multiplier="0.5:1" id="Nd3-SP-r5d"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="bg-close" translatesAutoresizingMaskIntoConstraints="NO" id="rbX-5r-Za4">
+                                <rect key="frame" x="0.0" y="-464" width="600" height="1064"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="rbX-5r-Za4" secondAttribute="height" multiplier="0.5:1" id="kk1-3O-V0U"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="glow-planet" translatesAutoresizingMaskIntoConstraints="NO" id="8KF-ur-i2Y">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8KF-ur-i2Y" secondAttribute="height" multiplier="1:1" id="yKc-27-c1D"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="yKc-27-c1D"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="yKc-27-c1D"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="planet" translatesAutoresizingMaskIntoConstraints="NO" id="Igg-LA-ALS">
+                                <rect key="frame" x="0.0" y="90" width="600" height="600"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Igg-LA-ALS" secondAttribute="height" multiplier="1:1" id="fNU-YD-5Su"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="REACH" translatesAutoresizingMaskIntoConstraints="NO" id="Sys-jO-Q4z">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="4wc-rU-SfW"/>
+                                    <constraint firstAttribute="height" constant="15" id="BXz-Eg-DrO"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4wc-rU-SfW"/>
+                                        <exclude reference="BXz-Eg-DrO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="4wc-rU-SfW"/>
+                                        <include reference="BXz-Eg-DrO"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.098039215686274508" green="0.098039215686274508" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Au1-8M-gnr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="41e-ZQ-lmk"/>
+                            <constraint firstItem="rbX-5r-Za4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="5Dy-GQ-Ls8"/>
+                            <constraint firstItem="Igg-LA-ALS" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="5Pp-KV-Ndq"/>
+                            <constraint firstItem="TsI-UW-ZTt" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="BeH-1d-wdT"/>
+                            <constraint firstItem="TsI-UW-ZTt" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="D4o-ds-nYp"/>
+                            <constraint firstItem="Sys-jO-Q4z" firstAttribute="centerX" secondItem="rbX-5r-Za4" secondAttribute="centerX" id="JgN-Rs-mpJ"/>
+                            <constraint firstItem="8KF-ur-i2Y" firstAttribute="centerY" secondItem="Igg-LA-ALS" secondAttribute="centerY" id="MBu-KX-f7B"/>
+                            <constraint firstItem="Igg-LA-ALS" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Tjt-ZZ-RbA"/>
+                            <constraint firstItem="rbX-5r-Za4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Y5Z-Bu-umd"/>
+                            <constraint firstItem="Au1-8M-gnr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="bzz-hK-Ewf"/>
+                            <constraint firstItem="Igg-LA-ALS" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="70" id="gIP-VU-eA5"/>
+                            <constraint firstItem="TsI-UW-ZTt" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="gTN-rF-kXY"/>
+                            <constraint firstItem="8KF-ur-i2Y" firstAttribute="width" secondItem="Igg-LA-ALS" secondAttribute="height" multiplier="1.27:1" id="gtR-gU-QtR"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Sys-jO-Q4z" secondAttribute="bottom" constant="220" id="hM7-WJ-9ba"/>
+                            <constraint firstItem="rbX-5r-Za4" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="ifH-el-XXt"/>
+                            <constraint firstItem="Au1-8M-gnr" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="tYo-ex-LM0"/>
+                            <constraint firstItem="8KF-ur-i2Y" firstAttribute="centerX" secondItem="Igg-LA-ALS" secondAttribute="centerX" id="uSd-ME-L7U"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8KF-ur-i2Y"/>
+                                <exclude reference="Sys-jO-Q4z"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="MBu-KX-f7B"/>
+                                <exclude reference="gtR-gU-QtR"/>
+                                <exclude reference="uSd-ME-L7U"/>
+                                <exclude reference="JgN-Rs-mpJ"/>
+                                <exclude reference="gIP-VU-eA5"/>
+                                <exclude reference="41e-ZQ-lmk"/>
+                                <exclude reference="D4o-ds-nYp"/>
+                                <exclude reference="5Dy-GQ-Ls8"/>
+                                <exclude reference="hM7-WJ-9ba"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="8KF-ur-i2Y"/>
+                                <include reference="Sys-jO-Q4z"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="MBu-KX-f7B"/>
+                                <include reference="gtR-gU-QtR"/>
+                                <include reference="uSd-ME-L7U"/>
+                                <include reference="JgN-Rs-mpJ"/>
+                                <include reference="gIP-VU-eA5"/>
+                                <include reference="41e-ZQ-lmk"/>
+                                <include reference="D4o-ds-nYp"/>
+                                <include reference="5Dy-GQ-Ls8"/>
+                                <include reference="hM7-WJ-9ba"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.5" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="REACH" width="123" height="15"/>
+        <image name="bg-close" width="319" height="638"/>
+        <image name="bg-far" width="369" height="698"/>
+        <image name="bg-veryfar" width="414" height="736"/>
+        <image name="glow-planet" width="936" height="936"/>
+        <image name="planet" width="736" height="736"/>
+    </resources>
 </document>
