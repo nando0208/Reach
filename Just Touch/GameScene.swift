@@ -56,7 +56,45 @@ class GameScene: Parallax {
         
         setupHome()
     }
-    
+
+    func restartGame() {
+
+        objectsInMoviments.forEach({ $0.0.removeFromParent() })
+        objectsInMoviments.removeAll()
+
+        rocket.removeFromParent()
+        rocket = Rocket()
+
+        tutorial?.removeFromParent()
+        tutorial = nil
+
+        manager.stopDeviceMotionUpdates()
+
+        inHome = false
+        inSplashScreen = true
+
+        gameOver = false
+
+        planet?.removeFromParent()
+        planet = nil
+
+        moon?.removeFromParent()
+        moon = nil
+
+        reachLabel?.removeFromParent()
+        reachLabel = nil
+
+        currentDistance = 0.0
+        meteorShower = false
+
+        distanceOfLastMeteor = 0.0
+        distanceBetweenMeteor = 5.0
+        
+        timeOfInitGame = 0.0
+
+        setupHome()
+    }
+
     private func setupHome(){
 
         userInteractionEnabled = true
@@ -320,18 +358,19 @@ extension GameScene: SKPhysicsContactDelegate {
 
     func didBeginContact(contact: SKPhysicsContact) {
 
-        if //gameOver == false &&
+        if gameOver == false &&
             (contact.bodyA.categoryBitMask == ObjectsBitMask.Rocket.rawValue &&
             contact.bodyB.categoryBitMask == ObjectsBitMask.Meteor.rawValue) {
 
             if let meteor = contact.bodyB.node as? Meteor {
 
                 meteor.crash()
+                rocket.removeLife()
             }
-            rocket.removeLife()
 
             if rocket.lifes <= 0 {
                 gameOver = true
+                restartGame()
             }
             //UIAlertView(title: "Perdeu! ", message: "Tempo de jogo: \(lastFrameTime - timeOfInitGame)", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
         }
