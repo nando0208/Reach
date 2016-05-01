@@ -33,7 +33,7 @@ final class GameoverScreen: SKSpriteNode {
 
             let location = touch.locationInNode(self)
 
-            if location.y < CGRectGetHeight(frame) * 0.25 {
+            if location.y < CGRectGetHeight(frame) * 0.15 {
                 delegate?.restartGameButton(self)
 
                 restated = true
@@ -44,10 +44,16 @@ final class GameoverScreen: SKSpriteNode {
         }
     }
 
-    convenience init() {
+    convenience init(points: Int) {
 
         let texture = SKTexture(imageNamed: "gameover")
         self.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+
+        let label = SKLabelNode(text: "\(points)")
+        label.fontColor = UIColor.whiteColor()
+        label.zPosition = 100000
+
+        addChild(label)
     }
 
     required init?(coder aDecoder: NSCoder) {

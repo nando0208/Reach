@@ -27,7 +27,7 @@ final class Meteor: SKSpriteNode {
         physicsBody = SKPhysicsBody(texture: texture, size: size)
         physicsBody?.categoryBitMask = ObjectsBitMask.Meteor.rawValue
         physicsBody?.contactTestBitMask = ObjectsBitMask.Rocket.rawValue
-        physicsBody?.collisionBitMask = 0
+        physicsBody?.collisionBitMask = ObjectsBitMask.Meteor.rawValue
 
         physicsBody?.affectedByGravity = false
     }
