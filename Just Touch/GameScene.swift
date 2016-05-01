@@ -74,7 +74,7 @@ class GameScene: Parallax {
         let menu = GameoverScreen()
         menu.position = CGPoint(x: CGRectGetMidX(frame),
                                 y: CGRectGetMidY(frame))
-        menu.zPosition = rocket.hatch.zPosition + 20
+        menu.zPosition = rocket.hatch.glow.zPosition + 4000
         menu.delegate = self
         addChild(menu)
 
@@ -281,8 +281,11 @@ class GameScene: Parallax {
         currentDistance += CGFloat(currentTime - lastFrameTime ) * speedGlobal
 
         updateMovimentObjects(currentTime - lastFrameTime)
-        rocket.moveY(currentTime - lastFrameTime, size: frame.size)
-        
+
+        if gameOver == false {
+            rocket.moveY(currentTime - lastFrameTime, size: frame.size)
+        }
+
         super.update(currentTime)
 
         checkAddOtherMeteor()
@@ -406,7 +409,7 @@ extension GameScene: SKPhysicsContactDelegate {
 }
 
 extension GameScene {
-    
+
     func startGame() {
         guard let planet = planet else { return }
 
