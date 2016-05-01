@@ -64,6 +64,7 @@ class GameScene: Parallax {
 
         rocket.removeFromParent()
         rocket = Rocket()
+        rocket.zRotation = 0
 
         tutorial?.removeFromParent()
         tutorial = nil
@@ -91,6 +92,9 @@ class GameScene: Parallax {
         distanceBetweenMeteor = 5.0
         
         timeOfInitGame = 0.0
+
+        minSpeedRocket = 0.2
+        setSpeedParallax(0.2)
 
         setupHome()
     }
