@@ -23,6 +23,7 @@
 		B05D2CE01CCCDC50001BE10B /* Hacth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D2CDF1CCCDC50001BE10B /* Hacth.swift */; };
 		B0B54B501CCF890A00A6BED3 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B54B4F1CCF890A00A6BED3 /* Tutorial.swift */; };
 		B0CBD27D1CD4D2E500DABB17 /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CBD27C1CD4D2E500DABB17 /* Meteor.swift */; };
+		B0CBD27F1CD61C3900DABB17 /* GameoverScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CBD27E1CD61C3900DABB17 /* GameoverScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		B05D2CDF1CCCDC50001BE10B /* Hacth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hacth.swift; sourceTree = "<group>"; };
 		B0B54B4F1CCF890A00A6BED3 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
 		B0CBD27C1CD4D2E500DABB17 /* Meteor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
+		B0CBD27E1CD61C3900DABB17 /* GameoverScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameoverScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +174,7 @@
 				B05D2CDF1CCCDC50001BE10B /* Hacth.swift */,
 				B0B54B4F1CCF890A00A6BED3 /* Tutorial.swift */,
 				B0CBD27C1CD4D2E500DABB17 /* Meteor.swift */,
+				B0CBD27E1CD61C3900DABB17 /* GameoverScreen.swift */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B05D2CE01CCCDC50001BE10B /* Hacth.swift in Sources */,
+				B0CBD27F1CD61C3900DABB17 /* GameoverScreen.swift in Sources */,
 				B0267BE91CC947E00076AF8B /* GameScene.swift in Sources */,
 				B0CBD27D1CD4D2E500DABB17 /* Meteor.swift in Sources */,
 				B0267C281CC9B0A60076AF8B /* Parallax.swift in Sources */,

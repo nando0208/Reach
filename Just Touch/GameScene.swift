@@ -18,6 +18,11 @@ enum ObjectsBitMask: UInt32 {
     case Meteor = 2
 }
 
+protocol GameSceneDelegate {
+
+    func restartGameButton(menu: GameoverScreen)
+}
+
 class GameScene: Parallax {
 
     var tutorial:Tutorial?
@@ -47,6 +52,8 @@ class GameScene: Parallax {
 
     var timeOfInitGame:NSTimeInterval = 0.0
 
+    var gameOverScene: GameoverScreen?
+
     override func didMoveToView(view: SKView) {
 
         /* Setup your scene here */
@@ -55,6 +62,23 @@ class GameScene: Parallax {
         backgroundColor = UIColor(red: 25.0/255.0, green: 25/255.0, blue: 25.0/255.0, alpha: 1.0)
         
         setupHome()
+    }
+
+    func gameOverView() {
+
+        minSpeedRocket = 0.0
+        changeSpeedTo(0.1)
+        manager.stopDeviceMotionUpdates()
+        rocket.zRotation = 0
+
+        let menu = GameoverScreen()
+        menu.position = CGPoint(x: CGRectGetMidX(frame),
+                                y: CGRectGetMidY(frame))
+        menu.zPosition = rocket.hatch.zPosition + 20
+        menu.delegate = self
+        addChild(menu)
+
+        gameOverScene = menu
     }
 
     func restartGame() {
@@ -374,9 +398,9 @@ extension GameScene: SKPhysicsContactDelegate {
 
             if rocket.lifes <= 0 {
                 gameOver = true
-                restartGame()
+                gameOverView()
+
             }
-            //UIAlertView(title: "Perdeu! ", message: "Tempo de jogo: \(lastFrameTime - timeOfInitGame)", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
         }
     }
 }
@@ -423,6 +447,13 @@ extension GameScene {
                 body.applyImpulse(CGVector(dx: 0.0, dy: body.velocity.dy * -0.06))
             }
         }
+    }
+}
+
+extension GameScene: GameSceneDelegate {
+
+    func restartGameButton(menu: GameoverScreen) {
+        restartGame()
     }
 }
 
