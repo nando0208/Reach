@@ -7,23 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B0267BE51CC947E00076AF8B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267BE41CC947E00076AF8B /* AppDelegate.swift */; };
-		B0267BE91CC947E00076AF8B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267BE81CC947E00076AF8B /* GameScene.swift */; };
-		B0267BEB1CC947E00076AF8B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267BEA1CC947E00076AF8B /* GameViewController.swift */; };
-		B0267BEE1CC947E00076AF8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0267BEC1CC947E00076AF8B /* Main.storyboard */; };
-		B0267BF01CC947E00076AF8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0267BEF1CC947E00076AF8B /* Assets.xcassets */; };
-		B0267BF31CC947E00076AF8B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0267BF11CC947E00076AF8B /* LaunchScreen.storyboard */; };
-		B0267BFE1CC947E10076AF8B /* Just_TouchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267BFD1CC947E10076AF8B /* Just_TouchTests.swift */; };
-		B0267C091CC947E10076AF8B /* Just_TouchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267C081CC947E10076AF8B /* Just_TouchUITests.swift */; };
-		B0267C211CC94FD50076AF8B /* SmokeRocket.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0267C1F1CC94FD50076AF8B /* SmokeRocket.sks */; };
-		B0267C221CC94FD50076AF8B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0267C201CC94FD50076AF8B /* GameScene.sks */; };
-		B0267C251CC953100076AF8B /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267C241CC953100076AF8B /* Rocket.swift */; };
-		B0267C281CC9B0A60076AF8B /* Parallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0267C271CC9B0A60076AF8B /* Parallax.swift */; };
-		B05D2CDE1CCC20E6001BE10B /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D2CDD1CCC20E6001BE10B /* Moon.swift */; };
-		B05D2CE01CCCDC50001BE10B /* Hacth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05D2CDF1CCCDC50001BE10B /* Hacth.swift */; };
-		B0B54B501CCF890A00A6BED3 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B54B4F1CCF890A00A6BED3 /* Tutorial.swift */; };
-		B0CBD27D1CD4D2E500DABB17 /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CBD27C1CD4D2E500DABB17 /* Meteor.swift */; };
-		B0CBD27F1CD61C3900DABB17 /* GameoverScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0CBD27E1CD61C3900DABB17 /* GameoverScreen.swift */; };
+		B09FAA231DCFD487000CEAA5 /* GameoverScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D39AB61DCFD39D00430D7C /* GameoverScreen.swift */; };
+		B09FAA241DCFD487000CEAA5 /* Hacth.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D39AB71DCFD39D00430D7C /* Hacth.swift */; };
+		B09FAA251DCFD487000CEAA5 /* Meteor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D39AB81DCFD39D00430D7C /* Meteor.swift */; };
+		B09FAA261DCFD487000CEAA5 /* Moon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D39AB91DCFD39D00430D7C /* Moon.swift */; };
+		B09FAA271DCFD487000CEAA5 /* Rocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D39ABA1DCFD39D00430D7C /* Rocket.swift */; };
+		B09FAA281DCFD487000CEAA5 /* Tutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D39ABB1DCFD39D00430D7C /* Tutorial.swift */; };
+		B09FAA291DCFD490000CEAA5 /* SmokeRocket.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0D39AB11DCFD39D00430D7C /* SmokeRocket.sks */; };
+		B09FAA2A1DCFD490000CEAA5 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B0D39AB21DCFD39D00430D7C /* GameScene.sks */; };
+		B09FAA2B1DCFD490000CEAA5 /* Parallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D39AB41DCFD39D00430D7C /* Parallax.swift */; };
+		B0D39AC21DCFD42400430D7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D39AA61DCFD39D00430D7C /* AppDelegate.swift */; };
+		B0D39AC31DCFD42400430D7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0D39AA71DCFD39D00430D7C /* Assets.xcassets */; };
+		B0D39AC41DCFD43400430D7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D39AAA1DCFD39D00430D7C /* Main.storyboard */; };
+		B0D39AC51DCFD43A00430D7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0D39AA81DCFD39D00430D7C /* LaunchScreen.storyboard */; };
+		B0D39AC61DCFD43E00430D7C /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D39AAC1DCFD39D00430D7C /* GameScene.swift */; };
+		B0D39AC71DCFD44100430D7C /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D39AAD1DCFD39D00430D7C /* GameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,29 +42,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B0267BE11CC947E00076AF8B /* Reach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reach.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0267BE41CC947E00076AF8B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0267BE81CC947E00076AF8B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		B0267BEA1CC947E00076AF8B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		B0267BED1CC947E00076AF8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B0267BEF1CC947E00076AF8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B0267BF21CC947E00076AF8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B0267BF41CC947E00076AF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0267BF91CC947E10076AF8B /* Just TouchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just TouchTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0267BFD1CC947E10076AF8B /* Just_TouchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_TouchTests.swift; sourceTree = "<group>"; };
-		B0267BFF1CC947E10076AF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0267C041CC947E10076AF8B /* Just TouchUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just TouchUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0267C081CC947E10076AF8B /* Just_TouchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_TouchUITests.swift; sourceTree = "<group>"; };
-		B0267C0A1CC947E10076AF8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0267C1F1CC94FD50076AF8B /* SmokeRocket.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeRocket.sks; sourceTree = "<group>"; };
-		B0267C201CC94FD50076AF8B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		B0267C241CC953100076AF8B /* Rocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
-		B0267C271CC9B0A60076AF8B /* Parallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parallax.swift; sourceTree = "<group>"; };
-		B05D2CDD1CCC20E6001BE10B /* Moon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
-		B05D2CDF1CCCDC50001BE10B /* Hacth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hacth.swift; sourceTree = "<group>"; };
-		B0B54B4F1CCF890A00A6BED3 /* Tutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
-		B0CBD27C1CD4D2E500DABB17 /* Meteor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
-		B0CBD27E1CD61C3900DABB17 /* GameoverScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameoverScreen.swift; sourceTree = "<group>"; };
+		B0267BE11CC947E00076AF8B /* Just Touch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Just Touch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0267BF91CC947E10076AF8B /* Just Touch.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just Touch.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0267C041CC947E10076AF8B /* Just Touch.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Just Touch.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0D39AA61DCFD39D00430D7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B0D39AA71DCFD39D00430D7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B0D39AA91DCFD39D00430D7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B0D39AAB1DCFD39D00430D7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B0D39AAC1DCFD39D00430D7C /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		B0D39AAD1DCFD39D00430D7C /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		B0D39AAE1DCFD39D00430D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0D39AB11DCFD39D00430D7C /* SmokeRocket.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeRocket.sks; sourceTree = "<group>"; };
+		B0D39AB21DCFD39D00430D7C /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		B0D39AB41DCFD39D00430D7C /* Parallax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parallax.swift; sourceTree = "<group>"; };
+		B0D39AB61DCFD39D00430D7C /* GameoverScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameoverScreen.swift; sourceTree = "<group>"; };
+		B0D39AB71DCFD39D00430D7C /* Hacth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hacth.swift; sourceTree = "<group>"; };
+		B0D39AB81DCFD39D00430D7C /* Meteor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meteor.swift; sourceTree = "<group>"; };
+		B0D39AB91DCFD39D00430D7C /* Moon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moon.swift; sourceTree = "<group>"; };
+		B0D39ABA1DCFD39D00430D7C /* Rocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket.swift; sourceTree = "<group>"; };
+		B0D39ABB1DCFD39D00430D7C /* Tutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tutorial.swift; sourceTree = "<group>"; };
+		B0D39ABD1DCFD39D00430D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0D39ABE1DCFD39D00430D7C /* Just_TouchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_TouchTests.swift; sourceTree = "<group>"; };
+		B0D39AC01DCFD39D00430D7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0D39AC11DCFD39D00430D7C /* Just_TouchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Just_TouchUITests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +95,9 @@
 		B0267BD81CC947E00076AF8B = {
 			isa = PBXGroup;
 			children = (
-				B0267BE31CC947E00076AF8B /* Just Touch */,
-				B0267BFC1CC947E10076AF8B /* Just TouchTests */,
-				B0267C071CC947E10076AF8B /* Just TouchUITests */,
+				B0D39AA51DCFD39D00430D7C /* Reach */,
+				B0D39ABC1DCFD39D00430D7C /* ReachhTests */,
+				B0D39ABF1DCFD39D00430D7C /* ReachUITests */,
 				B0267BE21CC947E00076AF8B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,84 +105,84 @@
 		B0267BE21CC947E00076AF8B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B0267BE11CC947E00076AF8B /* Reach.app */,
-				B0267BF91CC947E10076AF8B /* Just TouchTests.xctest */,
-				B0267C041CC947E10076AF8B /* Just TouchUITests.xctest */,
+				B0267BE11CC947E00076AF8B /* Just Touch.app */,
+				B0267BF91CC947E10076AF8B /* Just Touch.xctest */,
+				B0267C041CC947E10076AF8B /* Just Touch.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B0267BE31CC947E00076AF8B /* Just Touch */ = {
+		B0D39AA51DCFD39D00430D7C /* Reach */ = {
 			isa = PBXGroup;
 			children = (
-				B0267C1D1CC94FD50076AF8B /* View */,
-				B0267BE41CC947E00076AF8B /* AppDelegate.swift */,
-				B0267BE81CC947E00076AF8B /* GameScene.swift */,
-				B0267BEA1CC947E00076AF8B /* GameViewController.swift */,
-				B0267BEC1CC947E00076AF8B /* Main.storyboard */,
-				B0267BEF1CC947E00076AF8B /* Assets.xcassets */,
-				B0267BF11CC947E00076AF8B /* LaunchScreen.storyboard */,
-				B0267BF41CC947E00076AF8B /* Info.plist */,
+				B0D39AA61DCFD39D00430D7C /* AppDelegate.swift */,
+				B0D39AA71DCFD39D00430D7C /* Assets.xcassets */,
+				B0D39AA81DCFD39D00430D7C /* LaunchScreen.storyboard */,
+				B0D39AAA1DCFD39D00430D7C /* Main.storyboard */,
+				B0D39AAC1DCFD39D00430D7C /* GameScene.swift */,
+				B0D39AAD1DCFD39D00430D7C /* GameViewController.swift */,
+				B0D39AAE1DCFD39D00430D7C /* Info.plist */,
+				B0D39AAF1DCFD39D00430D7C /* View */,
 			);
-			path = "Just Touch";
+			path = Reach;
 			sourceTree = "<group>";
 		};
-		B0267BFC1CC947E10076AF8B /* Just TouchTests */ = {
+		B0D39AAF1DCFD39D00430D7C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B0267BFD1CC947E10076AF8B /* Just_TouchTests.swift */,
-				B0267BFF1CC947E10076AF8B /* Info.plist */,
-			);
-			path = "Just TouchTests";
-			sourceTree = "<group>";
-		};
-		B0267C071CC947E10076AF8B /* Just TouchUITests */ = {
-			isa = PBXGroup;
-			children = (
-				B0267C081CC947E10076AF8B /* Just_TouchUITests.swift */,
-				B0267C0A1CC947E10076AF8B /* Info.plist */,
-			);
-			path = "Just TouchUITests";
-			sourceTree = "<group>";
-		};
-		B0267C1D1CC94FD50076AF8B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B0267C261CC9B09A0076AF8B /* Parallax */,
-				B0267C231CC952DB0076AF8B /* Sprites */,
-				B0267C1E1CC94FD50076AF8B /* Emitters */,
-				B0267C201CC94FD50076AF8B /* GameScene.sks */,
+				B0D39AB01DCFD39D00430D7C /* Emitters */,
+				B0D39AB21DCFD39D00430D7C /* GameScene.sks */,
+				B0D39AB31DCFD39D00430D7C /* Parallax */,
+				B0D39AB51DCFD39D00430D7C /* Sprites */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		B0267C1E1CC94FD50076AF8B /* Emitters */ = {
+		B0D39AB01DCFD39D00430D7C /* Emitters */ = {
 			isa = PBXGroup;
 			children = (
-				B0267C1F1CC94FD50076AF8B /* SmokeRocket.sks */,
+				B0D39AB11DCFD39D00430D7C /* SmokeRocket.sks */,
 			);
 			path = Emitters;
 			sourceTree = "<group>";
 		};
-		B0267C231CC952DB0076AF8B /* Sprites */ = {
+		B0D39AB31DCFD39D00430D7C /* Parallax */ = {
 			isa = PBXGroup;
 			children = (
-				B0267C241CC953100076AF8B /* Rocket.swift */,
-				B05D2CDD1CCC20E6001BE10B /* Moon.swift */,
-				B05D2CDF1CCCDC50001BE10B /* Hacth.swift */,
-				B0B54B4F1CCF890A00A6BED3 /* Tutorial.swift */,
-				B0CBD27C1CD4D2E500DABB17 /* Meteor.swift */,
-				B0CBD27E1CD61C3900DABB17 /* GameoverScreen.swift */,
+				B0D39AB41DCFD39D00430D7C /* Parallax.swift */,
+			);
+			path = Parallax;
+			sourceTree = "<group>";
+		};
+		B0D39AB51DCFD39D00430D7C /* Sprites */ = {
+			isa = PBXGroup;
+			children = (
+				B0D39AB61DCFD39D00430D7C /* GameoverScreen.swift */,
+				B0D39AB71DCFD39D00430D7C /* Hacth.swift */,
+				B0D39AB81DCFD39D00430D7C /* Meteor.swift */,
+				B0D39AB91DCFD39D00430D7C /* Moon.swift */,
+				B0D39ABA1DCFD39D00430D7C /* Rocket.swift */,
+				B0D39ABB1DCFD39D00430D7C /* Tutorial.swift */,
 			);
 			path = Sprites;
 			sourceTree = "<group>";
 		};
-		B0267C261CC9B09A0076AF8B /* Parallax */ = {
+		B0D39ABC1DCFD39D00430D7C /* ReachhTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0267C271CC9B0A60076AF8B /* Parallax.swift */,
+				B0D39ABD1DCFD39D00430D7C /* Info.plist */,
+				B0D39ABE1DCFD39D00430D7C /* Just_TouchTests.swift */,
 			);
-			path = Parallax;
+			path = ReachhTests;
+			sourceTree = "<group>";
+		};
+		B0D39ABF1DCFD39D00430D7C /* ReachUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B0D39AC01DCFD39D00430D7C /* Info.plist */,
+				B0D39AC11DCFD39D00430D7C /* Just_TouchUITests.swift */,
+			);
+			path = ReachUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,12 +202,12 @@
 			);
 			name = Reach;
 			productName = "Just Touch";
-			productReference = B0267BE11CC947E00076AF8B /* Reach.app */;
+			productReference = B0267BE11CC947E00076AF8B /* Just Touch.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B0267BF81CC947E10076AF8B /* Just TouchTests */ = {
+		B0267BF81CC947E10076AF8B /* ReachTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0267C101CC947E10076AF8B /* Build configuration list for PBXNativeTarget "Just TouchTests" */;
+			buildConfigurationList = B0267C101CC947E10076AF8B /* Build configuration list for PBXNativeTarget "ReachTests" */;
 			buildPhases = (
 				B0267BF51CC947E10076AF8B /* Sources */,
 				B0267BF61CC947E10076AF8B /* Frameworks */,
@@ -220,14 +218,14 @@
 			dependencies = (
 				B0267BFB1CC947E10076AF8B /* PBXTargetDependency */,
 			);
-			name = "Just TouchTests";
+			name = ReachTests;
 			productName = "Just TouchTests";
-			productReference = B0267BF91CC947E10076AF8B /* Just TouchTests.xctest */;
+			productReference = B0267BF91CC947E10076AF8B /* Just Touch.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B0267C031CC947E10076AF8B /* Just TouchUITests */ = {
+		B0267C031CC947E10076AF8B /* ReachUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B0267C131CC947E10076AF8B /* Build configuration list for PBXNativeTarget "Just TouchUITests" */;
+			buildConfigurationList = B0267C131CC947E10076AF8B /* Build configuration list for PBXNativeTarget "ReachUITests" */;
 			buildPhases = (
 				B0267C001CC947E10076AF8B /* Sources */,
 				B0267C011CC947E10076AF8B /* Frameworks */,
@@ -238,9 +236,9 @@
 			dependencies = (
 				B0267C061CC947E10076AF8B /* PBXTargetDependency */,
 			);
-			name = "Just TouchUITests";
+			name = ReachUITests;
 			productName = "Just TouchUITests";
-			productReference = B0267C041CC947E10076AF8B /* Just TouchUITests.xctest */;
+			productReference = B0267C041CC947E10076AF8B /* Just Touch.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -267,7 +265,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B0267BDC1CC947E00076AF8B /* Build configuration list for PBXProject "Just Touch" */;
+			buildConfigurationList = B0267BDC1CC947E00076AF8B /* Build configuration list for PBXProject "Reach" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -281,8 +279,8 @@
 			projectRoot = "";
 			targets = (
 				B0267BE01CC947E00076AF8B /* Reach */,
-				B0267BF81CC947E10076AF8B /* Just TouchTests */,
-				B0267C031CC947E10076AF8B /* Just TouchUITests */,
+				B0267BF81CC947E10076AF8B /* ReachTests */,
+				B0267C031CC947E10076AF8B /* ReachUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -292,11 +290,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0267C211CC94FD50076AF8B /* SmokeRocket.sks in Resources */,
-				B0267C221CC94FD50076AF8B /* GameScene.sks in Resources */,
-				B0267BF31CC947E00076AF8B /* LaunchScreen.storyboard in Resources */,
-				B0267BF01CC947E00076AF8B /* Assets.xcassets in Resources */,
-				B0267BEE1CC947E00076AF8B /* Main.storyboard in Resources */,
+				B0D39AC51DCFD43A00430D7C /* LaunchScreen.storyboard in Resources */,
+				B09FAA2A1DCFD490000CEAA5 /* GameScene.sks in Resources */,
+				B09FAA291DCFD490000CEAA5 /* SmokeRocket.sks in Resources */,
+				B0D39AC31DCFD42400430D7C /* Assets.xcassets in Resources */,
+				B0D39AC41DCFD43400430D7C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,16 +319,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B05D2CE01CCCDC50001BE10B /* Hacth.swift in Sources */,
-				B0CBD27F1CD61C3900DABB17 /* GameoverScreen.swift in Sources */,
-				B0267BE91CC947E00076AF8B /* GameScene.swift in Sources */,
-				B0CBD27D1CD4D2E500DABB17 /* Meteor.swift in Sources */,
-				B0267C281CC9B0A60076AF8B /* Parallax.swift in Sources */,
-				B0267BEB1CC947E00076AF8B /* GameViewController.swift in Sources */,
-				B0267BE51CC947E00076AF8B /* AppDelegate.swift in Sources */,
-				B0B54B501CCF890A00A6BED3 /* Tutorial.swift in Sources */,
-				B05D2CDE1CCC20E6001BE10B /* Moon.swift in Sources */,
-				B0267C251CC953100076AF8B /* Rocket.swift in Sources */,
+				B09FAA241DCFD487000CEAA5 /* Hacth.swift in Sources */,
+				B09FAA281DCFD487000CEAA5 /* Tutorial.swift in Sources */,
+				B09FAA261DCFD487000CEAA5 /* Moon.swift in Sources */,
+				B0D39AC61DCFD43E00430D7C /* GameScene.swift in Sources */,
+				B09FAA231DCFD487000CEAA5 /* GameoverScreen.swift in Sources */,
+				B0D39AC71DCFD44100430D7C /* GameViewController.swift in Sources */,
+				B09FAA2B1DCFD490000CEAA5 /* Parallax.swift in Sources */,
+				B0D39AC21DCFD42400430D7C /* AppDelegate.swift in Sources */,
+				B09FAA251DCFD487000CEAA5 /* Meteor.swift in Sources */,
+				B09FAA271DCFD487000CEAA5 /* Rocket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +336,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0267BFE1CC947E10076AF8B /* Just_TouchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +343,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0267C091CC947E10076AF8B /* Just_TouchUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,20 +362,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B0267BEC1CC947E00076AF8B /* Main.storyboard */ = {
+		B0D39AA81DCFD39D00430D7C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				B0267BED1CC947E00076AF8B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		B0267BF11CC947E00076AF8B /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B0267BF21CC947E00076AF8B /* Base */,
+				B0D39AA91DCFD39D00430D7C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B0D39AAA1DCFD39D00430D7C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0D39AAB1DCFD39D00430D7C /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -476,11 +472,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "Just Touch/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Reach/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FernandoFerreira.Just-Touch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Just Touch";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -492,11 +488,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				INFOPLIST_FILE = "Just Touch/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Reach/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FernandoFerreira.Just-Touch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Just Touch";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -510,7 +506,7 @@
 				INFOPLIST_FILE = "Just TouchTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FernandoFerreira.Just-TouchTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Just Touch";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Just Touch.app/Just Touch";
 			};
 			name = Debug;
@@ -522,7 +518,7 @@
 				INFOPLIST_FILE = "Just TouchTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FernandoFerreira.Just-TouchTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Just Touch";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Just Touch.app/Just Touch";
 			};
 			name = Release;
@@ -534,7 +530,7 @@
 				INFOPLIST_FILE = "Just TouchUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FernandoFerreira.Just-TouchUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Just Touch";
 				TEST_TARGET_NAME = "Just Touch";
 			};
 			name = Debug;
@@ -545,7 +541,7 @@
 				INFOPLIST_FILE = "Just TouchUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "FernandoFerreira.Just-TouchUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Just Touch";
 				TEST_TARGET_NAME = "Just Touch";
 			};
 			name = Release;
@@ -553,7 +549,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B0267BDC1CC947E00076AF8B /* Build configuration list for PBXProject "Just Touch" */ = {
+		B0267BDC1CC947E00076AF8B /* Build configuration list for PBXProject "Reach" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0267C0B1CC947E10076AF8B /* Debug */,
@@ -571,7 +567,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0267C101CC947E10076AF8B /* Build configuration list for PBXNativeTarget "Just TouchTests" */ = {
+		B0267C101CC947E10076AF8B /* Build configuration list for PBXNativeTarget "ReachTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0267C111CC947E10076AF8B /* Debug */,
@@ -580,7 +576,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0267C131CC947E10076AF8B /* Build configuration list for PBXNativeTarget "Just TouchUITests" */ = {
+		B0267C131CC947E10076AF8B /* Build configuration list for PBXNativeTarget "ReachUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B0267C141CC947E10076AF8B /* Debug */,
