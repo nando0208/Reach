@@ -9,16 +9,16 @@
 import SpriteKit
 
 class Parallax: SKScene {
-    
+
     // Layers
     var layers = [(SKSpriteNode, CGFloat)]()
-    
+
     // Time of last frame
     var lastFrameTime: TimeInterval = 0
 
     // Speed of Rocket
     var speedGlobal: CGFloat = 0
-    
+
     init(backgrounds: [(String, CGFloat)], size: CGSize) {
         super.init(size: size)
 
@@ -32,9 +32,9 @@ class Parallax: SKScene {
 
             let layer = SKSpriteNode(imageNamed: imageNamed)
             let nextLayer = SKSpriteNode(imageNamed: imageNamed)
-            
+
             let scale = size.width / layer.size.width
-            
+
             layer.setScale(scale)
             nextLayer.setScale(scale)
 
@@ -45,27 +45,27 @@ class Parallax: SKScene {
 
             layer.position = CGPoint(x: size.width * 0.5,
                                      y: size.height * 0.5)
-            
+
             nextLayer.position  = CGPoint(x: layer.position.x,
                                           y: layer.position.y + layer.size.height)
-            
+
             self.addChild(layer)
             self.addChild(nextLayer)
-            
+
             self.layers.append((layer, speed))
             self.layers.append((nextLayer, speed))
         }
-        
+
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("Not implemented")
     }
-    
+
     fileprivate func updateParalax(_ deltaTime: TimeInterval) {
-        
+
         layers.forEach { (layer, speed) in
-            
+
             moveSprite(layer, deltaTime: deltaTime, speed: speed)
 
             if layer.frame.maxY < self.frame.minY {
@@ -75,9 +75,9 @@ class Parallax: SKScene {
             }
         }
     }
-    
+
     func moveSprite(_ sprite: SKSpriteNode, deltaTime: TimeInterval, speed: CGFloat) {
-        
+
         var newposition = sprite.position
         newposition.y -= speed * CGFloat(deltaTime) * speedGlobal
         sprite.position = newposition
@@ -89,7 +89,7 @@ class Parallax: SKScene {
         newposition.x += speed * CGFloat(deltaTime)
         sprite.position = newposition
     }
-    
+
     override func update(_ currentTime: TimeInterval) {
 
         if lastFrameTime <= 0 {
@@ -107,5 +107,5 @@ class Parallax: SKScene {
             speedGlobal = speed
         }
     }
-    
+
 }

@@ -10,10 +10,9 @@ import SpriteKit
 
 final class Meteor: SKSpriteNode {
 
-    var ranImage:UInt32 = 0
+    var ranImage: UInt32 = 0
 
-    override init(texture: SKTexture!, color: UIColor, size: CGSize)
-    {
+    override init(texture: SKTexture!, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
 
         let ran = arc4random() % 2
@@ -44,7 +43,7 @@ final class Meteor: SKSpriteNode {
         self.ranImage = ran
     }
 
-    func crash(){
+    func crash() {
 
         texture = SKTexture(imageNamed: String(format: "meteorcrash%d", self.ranImage))
         physicsBody = nil

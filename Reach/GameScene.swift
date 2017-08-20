@@ -9,24 +9,23 @@
 import SpriteKit
 import CoreMotion
 
-let maxSpeedRocket:CGFloat = 10.0
-var minSpeedRocket:CGFloat = 0.2
-
+let maxSpeedRocket: CGFloat = 10.0
+var minSpeedRocket: CGFloat = 0.2
 
 enum ObjectsBitMask: UInt32 {
     case rocket = 1
     case meteor = 2
 }
 
-protocol GameSceneDelegate {
+protocol GameSceneDelegate: class {
 
     func restartGameButton(_ menu: GameoverScreen)
 }
 
 class GameScene: Parallax {
 
-    var tutorial:Tutorial?
-    
+    var tutorial: Tutorial?
+
     let manager = CMMotionManager()
 
     var objectsInMoviments = [(SKSpriteNode, CGFloat, CGFloat)]()
@@ -37,20 +36,20 @@ class GameScene: Parallax {
     var inSplashScreen = true
 
     var gameOver = false
-    
+
     var planet: SKSpriteNode?
     var moon: Moon?
     var reachLabel: SKSpriteNode?
-    
+
     var forceTouchEnable = false
 
-    var currentDistance:CGFloat = 0.0
+    var currentDistance: CGFloat = 0.0
     var meteorShower = false
 
-    var distanceOfLastMeteor:CGFloat = 0.0
-    var distanceBetweenMeteor:CGFloat = 5.0
+    var distanceOfLastMeteor: CGFloat = 0.0
+    var distanceBetweenMeteor: CGFloat = 5.0
 
-    var timeOfInitGame:TimeInterval = 0.0
+    var timeOfInitGame: TimeInterval = 0.0
 
     var gameOverScene: GameoverScreen?
 
@@ -60,7 +59,7 @@ class GameScene: Parallax {
         physicsWorld.contactDelegate = self
 
         backgroundColor = UIColor(red: 25.0/255.0, green: 25/255.0, blue: 25.0/255.0, alpha: 1.0)
-        
+
         setupHome()
     }
 
@@ -114,7 +113,7 @@ class GameScene: Parallax {
 
         distanceOfLastMeteor = 0.0
         distanceBetweenMeteor = 5.0
-        
+
         timeOfInitGame = 0.0
 
         minSpeedRocket = 0.2
@@ -123,46 +122,46 @@ class GameScene: Parallax {
         setupHome()
     }
 
-    fileprivate func setupHome(){
+    fileprivate func setupHome() {
 
         isUserInteractionEnabled = true
-        
+
         let planet = SKSpriteNode(imageNamed: "planet")
         let glow = SKSpriteNode(imageNamed: "glow-planet")
         glow.zPosition = planet.zPosition - 1
-        
+
         let scale = frame.height / planet.frame.height
         planet.setScale(scale)
-        
+
         planet.position = CGPoint(x: frame.midX,
                                   y: frame.height - ( 70 + planet.frame.height / 2 ))
-        
+
         planet.run(SKAction.repeatForever(
             SKAction.rotate( byAngle: CGFloat( .pi * 2.0), duration: 200.0)))
-        
+
         planet.addChild(glow)
-        
+
         addChild(planet)
-        
+
         let reachLabel = SKSpriteNode(imageNamed: "REACH")
         reachLabel.zPosition = planet.zPosition + 10
         reachLabel.position = CGPoint(x: frame.midX,
                                       y: 220 + reachLabel.frame.height/2)
-        
+
         addChild(reachLabel)
-        
+
         let moon = Moon(imageNamed: "moon")
         moon.zPosition = reachLabel.zPosition
         moon.setScale(0.0)
         moon.position = CGPoint(x: frame.midX,
                                 y: reachLabel.position.y + 50 + moon.frame.height/2 )
-        
+
         addChild(moon)
         moon.run(SKAction.scale(to: 0.6, duration: 0.5))
-        
+
         let moonGlow = SKSpriteNode(imageNamed: "moon-glow")
         moonGlow.zPosition = moon.zPosition + 10
-        
+
         moon.addChild(moonGlow)
         moon.glow = moonGlow
 
@@ -180,20 +179,22 @@ class GameScene: Parallax {
                     ])
                 ])
             ))
-        
+
         self.planet = planet
         self.reachLabel = reachLabel
         self.moon = moon
     }
-    
+
     func initTutorial () {
-        
-        let myTutorial = Tutorial(texture: nil, color: UIColor.clear, size: CGSize(width: 10, height: frame.height * 0.05))
-        
+
+        let myTutorial = Tutorial(texture: nil,
+                                  color: UIColor.clear,
+                                  size: CGSize(width: 10, height: frame.height * 0.05))
+
         myTutorial.position = CGPoint(x: frame.midX,
                                       y: myTutorial.frame.height + 50)
         addChild(myTutorial)
-        
+
         tutorial = myTutorial
     }
 
@@ -201,11 +202,11 @@ class GameScene: Parallax {
     func setupCoreMotion() {
 
         let queue = OperationQueue()
-        
+
         if manager.isDeviceMotionAvailable {
             manager.deviceMotionUpdateInterval = 0.01
-            manager.startDeviceMotionUpdates(to: queue, withHandler: { (data: CMDeviceMotion?, error: Error?) in
-                
+            manager.startDeviceMotionUpdates(to: queue, withHandler: { (data: CMDeviceMotion?, _) in
+
                 if let gravity = data?.gravity {
                     var rotation = atan2( gravity.x, gravity.y)
                     rotation = rotation > 0 ?
@@ -218,13 +219,13 @@ class GameScene: Parallax {
         }
     }
 
-    func applyRotation(_ rotation: CGFloat){
+    func applyRotation(_ rotation: CGFloat) {
 
         rocket.zRotation = rotation
     }
 
     // MARK: - Touches
-        
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
        /* Called when a touch begins */
 
@@ -259,7 +260,7 @@ class GameScene: Parallax {
 
         if #available(iOS 9.0, *) {
             if forceTouchEnable {
-                
+
                 changeSpeedTo(minSpeedRocket)
             }
         }
@@ -269,7 +270,7 @@ class GameScene: Parallax {
 
         if #available(iOS 9.0, *) {
             if forceTouchEnable {
-                
+
                 changeSpeedTo(minSpeedRocket)
             }
         }
@@ -317,7 +318,7 @@ class GameScene: Parallax {
         }
     }
 
-    fileprivate func checkPositionOfRocket(){
+    fileprivate func checkPositionOfRocket() {
 
         if inHome && rocket.position.y > frame.midY {
             rocket.physicsBody?.velocity = CGVector.zero
@@ -327,7 +328,7 @@ class GameScene: Parallax {
         }
     }
 
-    fileprivate func playTheGame(){
+    fileprivate func playTheGame() {
 
         initTutorial()
         timeOfInitGame = lastFrameTime
@@ -338,7 +339,7 @@ class GameScene: Parallax {
         setupCoreMotion()
     }
 
-    fileprivate func addMeteorToView(){
+    fileprivate func addMeteorToView() {
 
         distanceOfLastMeteor = currentDistance
         let meteor = Meteor()
@@ -357,7 +358,7 @@ class GameScene: Parallax {
         addObjectToView(meteor, speedX: ranSpeedX, speedY: 30.0 + ranSpeed)
     }
 
-    fileprivate func addObjectToView(_ object: SKSpriteNode, speedX:CGFloat, speedY: CGFloat) {
+    fileprivate func addObjectToView(_ object: SKSpriteNode, speedX: CGFloat, speedY: CGFloat) {
 
         addChild(object)
         objectsInMoviments.append((object, speedX, speedY))
@@ -373,7 +374,7 @@ class GameScene: Parallax {
                                 touch.maximumPossibleForce
             }
         }
-        
+
         let location = touch.location(in: self)
 
         let maxYOfControl = frame.height * 0.2
@@ -437,14 +438,14 @@ extension GameScene {
         moon?.glow?.removeAllActions()
         moon?.glow?.setScale(0.5)
         moon?.glow?.alpha = 1.0
-        
+
         moon?.glow?.run(SKAction.sequence([
             SKAction.scale(to: 3, duration: 1.5),
             SKAction.scale(to: 0.0, duration: 0.0)
             ]))
-        
+
         moon?.run(SKAction.fadeOut(withDuration: 1.3))
-        
+
         reachLabel?.run(SKAction.fadeOut(withDuration: 1.3))
         planet.run(SKAction.move(to: CGPoint(x: planet.position.x, y: planet.frame.height * -0.15), duration: 3.0), completion: {
 
@@ -454,7 +455,7 @@ extension GameScene {
             if let body = self.rocket.physicsBody {
                 body.applyImpulse(CGVector(dx: 0.0, dy: body.velocity.dy * -0.06))
             }
-        }) 
+        })
     }
 }
 
@@ -464,4 +465,3 @@ extension GameScene: GameSceneDelegate {
         restartGame()
     }
 }
-

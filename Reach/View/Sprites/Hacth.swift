@@ -16,9 +16,8 @@ enum HacthImageName {
 final class Hatch: SKSpriteNode {
 
     var glow = SKSpriteNode()
- 
-    override init(texture: SKTexture!, color: UIColor, size: CGSize)
-    {
+
+    override init(texture: SKTexture!, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: color, size: size)
 
         let glow = SKSpriteNode(imageNamed: "escotilha-azul-glow")
@@ -40,7 +39,7 @@ final class Hatch: SKSpriteNode {
 
         self.glow = glow
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -61,9 +60,9 @@ final class Hatch: SKSpriteNode {
     }
 
     convenience init() {
-        
+
         let texture = SKTexture(imageNamed:"escotilha-azul")
-        
+
         let color = UIColor(red: 2.0/255.0, green: 239.0/255.0, blue: 239.0/255.0, alpha: 1.0)
         self.init(texture: texture, color: color, size: texture.size())
     }

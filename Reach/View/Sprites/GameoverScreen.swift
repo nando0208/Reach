@@ -12,7 +12,7 @@ final class GameoverScreen: SKSpriteNode {
 
     var restated = false
 
-    var delegate: GameSceneDelegate? 
+    var delegate: GameSceneDelegate?
 
     override init(texture: SKTexture?, color: UIColor, size: CGSize) {
         super.init(texture: texture, color: UIColor(), size: size)
@@ -37,7 +37,7 @@ final class GameoverScreen: SKSpriteNode {
                 delegate?.restartGameButton(self)
 
                 restated = true
-                run(SKAction.fadeOut(withDuration: 0.02), completion: { 
+                run(SKAction.fadeOut(withDuration: 0.02), completion: {
                     self.removeFromParent()
                 })
             }
