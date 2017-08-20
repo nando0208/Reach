@@ -46,7 +46,7 @@ final class Tutorial: SKSpriteNode {
                                     y: CGFloat(index) * (1.0 - force) * frame.height / CGFloat(layers.count - 1))
         }
         
-        if(force > 0.50 && isFinished == false) {
+        if force > 0.4 && isFinished == false {
             
             isFinished = true
             run(SKAction.fadeOut(withDuration: 3.5), completion: { self.removeFromParent() })
