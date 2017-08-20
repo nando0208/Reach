@@ -18,16 +18,16 @@ final class Meteor: SKSpriteNode {
 
         let ran = arc4random() % 2
 
-        let ranSpeed = Double(arc4random()) % 20
+        let ranSpeed = Double(arc4random()).truncatingRemainder(dividingBy: 20)
 
-        runAction(SKAction.repeatActionForever(
-            SKAction.rotateByAngle( CGFloat( M_PI * 2.0 * (ran == 0 ? -1 : 1)),
+        run(SKAction.repeatForever(
+            SKAction.rotate( byAngle: CGFloat(.pi * 2.0 * (ran == 0 ? -1 : 1)),
                 duration: 40.0 + ranSpeed)))
 
         physicsBody = SKPhysicsBody(texture: texture, size: size)
-        physicsBody?.categoryBitMask = ObjectsBitMask.Meteor.rawValue
-        physicsBody?.contactTestBitMask = ObjectsBitMask.Rocket.rawValue
-        physicsBody?.collisionBitMask = ObjectsBitMask.Meteor.rawValue
+        physicsBody?.categoryBitMask = ObjectsBitMask.meteor.rawValue
+        physicsBody?.contactTestBitMask = ObjectsBitMask.rocket.rawValue
+        physicsBody?.collisionBitMask = ObjectsBitMask.meteor.rawValue
 
         physicsBody?.affectedByGravity = false
     }
@@ -48,7 +48,7 @@ final class Meteor: SKSpriteNode {
 
         texture = SKTexture(imageNamed: String(format: "meteorcrash%d", self.ranImage))
         physicsBody = nil
-        runAction(SKAction.fadeOutWithDuration(0.7), completion: {
+        run(SKAction.fadeOut(withDuration: 0.7), completion: {
             self.position = CGPoint(x: 0.0, y: -1000)
         })
     }

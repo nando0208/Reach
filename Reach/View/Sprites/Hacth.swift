@@ -22,17 +22,17 @@ final class Hatch: SKSpriteNode {
         super.init(texture: texture, color: color, size: size)
 
         let glow = SKSpriteNode(imageNamed: "escotilha-azul-glow")
-        glow.position = CGPoint(x: CGRectGetMidX(self.frame),
-                                y: CGRectGetMidX(self.frame))
-        glow.runAction(SKAction.repeatActionForever(
+        glow.position = CGPoint(x: self.frame.midX,
+                                y: self.frame.midX)
+        glow.run(SKAction.repeatForever(
             SKAction.sequence([
                 SKAction.group([
-                    SKAction.fadeOutWithDuration(1.3),
-                    SKAction.scaleTo(2, duration: 1.3)
+                    SKAction.fadeOut(withDuration: 1.3),
+                    SKAction.scale(to: 2, duration: 1.3)
                     ]),
                 SKAction.group([
-                    SKAction.fadeInWithDuration(0.0),
-                    SKAction.scaleTo(0.0, duration: 0.0)
+                    SKAction.fadeIn(withDuration: 0.0),
+                    SKAction.scale(to: 0.0, duration: 0.0)
                     ])
                 ])
             ))
@@ -45,7 +45,7 @@ final class Hatch: SKSpriteNode {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func changeToColor(color: HacthImageName) {
+    func changeToColor(_ color: HacthImageName) {
 
         switch color {
         case .blue:

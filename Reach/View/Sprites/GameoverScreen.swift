@@ -19,25 +19,25 @@ final class GameoverScreen: SKSpriteNode {
 
         let titleTutorial = SKSpriteNode(imageNamed: "dave")
 
-        titleTutorial.position = CGPoint(x: 0.0, y: size.height/2 + 40 + CGRectGetHeight(titleTutorial.frame))
+        titleTutorial.position = CGPoint(x: 0.0, y: size.height/2 + 40 + titleTutorial.frame.height)
 
-        userInteractionEnabled = true
+        isUserInteractionEnabled = true
 
         addChild(titleTutorial)
 
         zPosition = 400
     }
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let touch = touches.first where restated == false {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        if let touch = touches.first, restated == false {
 
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
 
-            if location.y < CGRectGetHeight(frame) * 0.15 {
+            if location.y < frame.height * 0.15 {
                 delegate?.restartGameButton(self)
 
                 restated = true
-                runAction(SKAction.fadeOutWithDuration(0.02), completion: { 
+                run(SKAction.fadeOut(withDuration: 0.02), completion: { 
                     self.removeFromParent()
                 })
             }
@@ -47,10 +47,10 @@ final class GameoverScreen: SKSpriteNode {
     convenience init(points: Int) {
 
         let texture = SKTexture(imageNamed: "gameover")
-        self.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        self.init(texture: texture, color: UIColor.clear, size: texture.size())
 
         let label = SKLabelNode(text: "\(points)")
-        label.fontColor = UIColor.whiteColor()
+        label.fontColor = UIColor.white
         label.zPosition = 100000
 
         addChild(label)

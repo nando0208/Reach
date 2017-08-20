@@ -10,7 +10,7 @@ import SpriteKit
 
 final class Rocket: SKSpriteNode {
 
-    private var speedRocket: CGFloat = 0
+    fileprivate var speedRocket: CGFloat = 0
 
     var maxSpeedAlpha:CGFloat = -0.1
     var minSpeedAlpha:CGFloat = -2.0
@@ -25,14 +25,14 @@ final class Rocket: SKSpriteNode {
     {
         super.init(texture: texture, color: color, size: size)
         
-        guard let somkePath = NSBundle.mainBundle().pathForResource("SmokeRocket", ofType: "sks"),
-            smokeNode = NSKeyedUnarchiver.unarchiveObjectWithFile(somkePath) as? SKEmitterNode else {
+        guard let somkePath = Bundle.main.path(forResource: "SmokeRocket", ofType: "sks"),
+            let smokeNode = NSKeyedUnarchiver.unarchiveObject(withFile: somkePath) as? SKEmitterNode else {
                 return
         }
         
         smokeNode.setScale(CGFloat(0.34)) //Scale of Rocket
-        smokeNode.position = CGPoint(x: CGRectGetMidX(self.frame),
-                                     y: CGRectGetMinY(self.frame))
+        smokeNode.position = CGPoint(x: self.frame.midX,
+                                     y: self.frame.minY)
         
         addChild(smokeNode)
         
@@ -43,15 +43,15 @@ final class Rocket: SKSpriteNode {
         addChild(hatch)
         
         hatch.zPosition = zPosition + 30
-        hatch.position = CGPoint(x: CGRectGetMidX(self.frame),
-                                 y: CGRectGetHeight(self.frame)
-                                    - ( CGRectGetHeight(hatch.frame) / 2 ) - CGRectGetHeight(self.frame) * 0.66 )
+        hatch.position = CGPoint(x: self.frame.midX,
+                                 y: self.frame.height
+                                    - ( hatch.frame.height / 2 ) - self.frame.height * 0.66 )
         
         hatch.glow.zPosition = hatch.zPosition + 1
 
         physicsBody = SKPhysicsBody(texture: texture, size: size)
-        physicsBody?.categoryBitMask = ObjectsBitMask.Rocket.rawValue
-        physicsBody?.contactTestBitMask = ObjectsBitMask.Meteor.rawValue
+        physicsBody?.categoryBitMask = ObjectsBitMask.rocket.rawValue
+        physicsBody?.contactTestBitMask = ObjectsBitMask.meteor.rawValue
         physicsBody?.collisionBitMask = 0
         physicsBody?.affectedByGravity = false
     }
@@ -59,14 +59,14 @@ final class Rocket: SKSpriteNode {
     convenience init() {
         
         let texture = SKTexture(imageNamed: "rocket")
-        self.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        self.init(texture: texture, color: UIColor.clear, size: texture.size())
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func setSpeedRocket(newValue: CGFloat) {
+    func setSpeedRocket(_ newValue: CGFloat) {
 
         if newValue <= maxSpeedRocket && newValue >= minSpeedRocket {
             speedRocket = newValue
@@ -89,13 +89,13 @@ final class Rocket: SKSpriteNode {
         }
     }
 
-    func moveY(deltaTime: NSTimeInterval, size: CGSize) {
+    func moveY(_ deltaTime: TimeInterval, size: CGSize) {
     
-        var rotation = zRotation + CGFloat(M_PI)
+        var rotation = zRotation + .pi
 
         let margin = size.width * 0.1
 
-        rotation = rotation > 0 ? rotation - CGFloat(M_PI) : rotation + CGFloat(M_PI)
+        rotation = rotation > 0 ? rotation - .pi : rotation + .pi
 
         var newPosition = position
         newPosition.x -= 340 * rotation * CGFloat(deltaTime)

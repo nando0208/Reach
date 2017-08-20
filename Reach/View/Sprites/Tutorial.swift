@@ -25,7 +25,7 @@ final class Tutorial: SKSpriteNode {
         
         let titleTutorial = SKSpriteNode(imageNamed: "Control the speed")
         
-        titleTutorial.position = CGPoint(x: size.width/2, y: size.height + 40 + CGRectGetHeight(titleTutorial.frame))
+        titleTutorial.position = CGPoint(x: size.width/2, y: size.height + 40 + titleTutorial.frame.height)
 
         titleTutorial.setScale(1.4)
 
@@ -38,18 +38,18 @@ final class Tutorial: SKSpriteNode {
         layers.forEach { addChild($0) }
     }
     
-    func updateLayersPosition(force: CGFloat) {
+    func updateLayersPosition(_ force: CGFloat) {
         
-        for (index, layer) in layers.enumerate() {
+        for (index, layer) in layers.enumerated() {
             
             layer.position = CGPoint(x: 0.0,
-                                    y: CGFloat(index) * (1.0 - force) * CGRectGetHeight(frame) / CGFloat(layers.count - 1))
+                                    y: CGFloat(index) * (1.0 - force) * frame.height / CGFloat(layers.count - 1))
         }
         
         if(force > 0.50 && isFinished == false) {
             
             isFinished = true
-            runAction(SKAction.fadeOutWithDuration(3.5), completion: { self.removeFromParent() })
+            run(SKAction.fadeOut(withDuration: 3.5), completion: { self.removeFromParent() })
         }
     }
 
