@@ -17,7 +17,7 @@ class GameViewController: UIViewController {
         let scene = GameScene(backgrounds: [("bg-close",   80.0),
                                             ("bg-far",     40.0),
                                             ("bg-veryfar", 20.0)],
-                              size: self.view.frame.size)
+                              size: view.frame.size)
         
         /* Set the scale mode to scale to fit the window */
         scene.scaleMode = .aspectFill
